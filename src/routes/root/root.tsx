@@ -1,7 +1,12 @@
 import React from 'react';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 function Root() {
-  return <></>;
+  return (
+    <>
+      <SearchBar />
+    </>
+  );
 }
 
 export default Root;
