@@ -14,6 +14,9 @@ function Header() {
       case '/': {
         return 'Home';
       }
+      case '/about': {
+        return 'About us';
+      }
       default: {
         return '404';
       }
