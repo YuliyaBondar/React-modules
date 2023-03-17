@@ -1,7 +1,32 @@
 .header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
   width: 100vw;
+  padding: 20px 0;
 
   background-color: #f7f6f5;
+
+  border-bottom: 1px solid #96d5eb;
+}
+
+.nav-list {
+  display: flex;
+  column-gap: 30px;
+}
+
+.nav-list_item {
+  min-width: 90px;
+  padding: 5px;
+
+  text-align: center;
+  font-size: 18px;
+
+  border: 1px solid #4f7f8f;
+  border-radius: 12px;
+}
+
+.nav-list_item:hover {
+  border-color: #57a3bd;
 }
