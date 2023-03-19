@@ -30,3 +30,8 @@
 .nav-list_item:hover {
   border-color: #57a3bd;
 }
+
+.nav-list__link_active {
+  color: #213547;
+  text-shadow: #57a3bd 1px 0 10px;
+}
