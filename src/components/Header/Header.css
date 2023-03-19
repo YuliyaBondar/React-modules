@@ -16,7 +16,8 @@
   column-gap: 30px;
 }
 
-.nav-list_item {
+.nav-list_item a {
+  display: block;
   min-width: 90px;
   padding: 5px;
 
@@ -27,11 +28,14 @@
   border-radius: 12px;
 }
 
-.nav-list_item:hover {
+.nav-list_item a:hover {
   border-color: #57a3bd;
 }
 
 .nav-list__link_active {
-  color: #213547;
-  text-shadow: #57a3bd 1px 0 10px;
+  color: #f7f6f5;
+
+  background-color: #4f7f8f;
+
+  pointer-events: none;
 }

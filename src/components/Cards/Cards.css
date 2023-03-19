@@ -1,0 +1,21 @@
+.cards__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+
+.cards__item {
+  background-color: #f7f6f5;
+
+  box-shadow: 10px 5px 5px #96d5eb;
+}
+
+.cards__item_img {
+  width: -webkit-fill-available;
+  height: 400px;
+}
+
+.cards__item_characteristics {
+  padding: 15px;
+}

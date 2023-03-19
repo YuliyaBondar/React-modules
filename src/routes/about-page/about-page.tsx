@@ -6,8 +6,7 @@ import './about-page.css';
 export default function AboutPage() {
   return (
     <div className="about-page">
-      <h1>Developer</h1>
-      <h2>Yuliya Bondar</h2>
+      <h2>Developer: Yuliya Bondar</h2>
       <div>
         <p>
           <span className="f-bold">My GitHub:</span>{' '}

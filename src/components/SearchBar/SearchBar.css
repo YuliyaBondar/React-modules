@@ -5,6 +5,7 @@ form {
 }
 
 .search-input {
+  margin-bottom: 30px;
   padding: 10px 25px 10px 45px;
 
   font-size: 18px;
