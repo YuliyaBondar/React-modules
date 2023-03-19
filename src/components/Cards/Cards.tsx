@@ -25,10 +25,7 @@ function Cards() {
           <img src={card.image} alt={card.name} className="cards__item_img" />
           <div className="cards__item_characteristics">
             <p>
-              <span className="f-bold">Name:</span> {card.name}
-            </p>
-            <p>
-              <span className="f-bold">Description:</span> {card.description}
+              <span className="f-bold">{card.name}</span>
             </p>
             <p>
               <span className="f-bold">Price:</span> {card.price}$
@@ -36,21 +33,7 @@ function Cards() {
             <p>
               <span className="f-bold">Brand:</span> {card.brand}
             </p>
-            <p>
-              <span className="f-bold">Category:</span> {card.category}
-            </p>
-            <p>
-              <span className="f-bold">Color:</span> {card.color}
-            </p>
-            <p>
-              <span className="f-bold">Size:</span> {card.size}
-            </p>
-            <p>
-              <span className="f-bold">Material:</span> {card.material}
-            </p>
-            <p>
-              <span className="f-bold">Rating:</span> {card.rating}
-            </p>
+            <p>{card.rating}☆</p>
           </div>
         </div>
       ))}
