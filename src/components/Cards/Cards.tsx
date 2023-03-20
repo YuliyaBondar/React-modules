@@ -1,6 +1,6 @@
 import Card from '../Card/Card';
 import React from 'react';
-import { IData } from 'types/types';
+import { IData } from 'utils/interfaces_and_types';
 
 import './Cards.css';
 
@@ -21,7 +21,7 @@ function Cards() {
   return (
     <div className="cards__container">
       {data.map((card) => (
-        <Card card={card} />
+        <Card card={card} key={card.id} />
       ))}
     </div>
   );

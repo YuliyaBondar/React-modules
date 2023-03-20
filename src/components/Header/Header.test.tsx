@@ -9,7 +9,7 @@ describe('Header Component', () => {
   test('If Header is rendered!', () => {
     render(
       <BrowserRouter>
-        <Header title="" />
+        <Header title="About us" />
       </BrowserRouter>
     );
     expect(screen.getByTestId('nav')).toBeInTheDocument();

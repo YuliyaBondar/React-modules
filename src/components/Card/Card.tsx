@@ -1,5 +1,5 @@
 import React from 'react';
-import { IData } from 'types/types';
+import { IData } from 'utils/interfaces_and_types';
 
 import './Card.css';
 
@@ -9,7 +9,7 @@ type Props = {
 
 function Card({ card }: Props) {
   return (
-    <div key={card.id} className="cards__item">
+    <div className="cards__item">
       <img src={card.image} alt={card.name} className="cards__item_img" />
       <div className="cards__item_characteristics">
         <p>

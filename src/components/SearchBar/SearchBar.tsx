@@ -1,5 +1,5 @@
 import React from 'react';
-import { Props, SearchState } from 'types/types';
+import { Props, SearchState } from 'utils/interfaces_and_types';
 
 import './SearchBar.css';
 
