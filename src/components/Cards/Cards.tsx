@@ -1,3 +1,4 @@
+import Card from '../Card/Card';
 import React from 'react';
 import { IData } from 'types/types';
 
@@ -20,21 +21,7 @@ function Cards() {
   return (
     <div className="cards__container">
       {data.map((card) => (
-        <div key={card.id} className="cards__item">
-          <img src={card.image} alt={card.name} className="cards__item_img" />
-          <div className="cards__item_characteristics">
-            <p>
-              <span className="f-bold">{card.name}</span>
-            </p>
-            <p>
-              <span className="f-bold">Price:</span> {card.price}$
-            </p>
-            <p>
-              <span className="f-bold">Brand:</span> {card.brand}
-            </p>
-            <p>{card.rating}☆</p>
-          </div>
-        </div>
+        <Card card={card} />
       ))}
     </div>
   );
