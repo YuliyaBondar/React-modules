@@ -10,10 +10,12 @@ export default function AboutPage() {
       <Header title={'About us'} />
       <main className="main">
         <div className="about-page">
-          <h2>Developer: Yuliya Bondar</h2>
+          <h2 id="h2_developer">Developer: Yuliya Bondar</h2>
           <div>
             <p>
-              <span className="f-bold">My GitHub:</span>{' '}
+              <span className="f-bold" id="github">
+                My GitHub:
+              </span>{' '}
               <Link to={`https://github.com/YuliyaBondar`}>yuliyabondar</Link>
             </p>
             <p>

@@ -9,8 +9,8 @@ export default function ErrorPage() {
       <Header title={'404'} />
       <main className="main">
         <div className="error-page">
-          <h2>Oops!</h2>
-          <p>Sorry, page is not found.</p>
+          <h2 id="h2_error">Oops!</h2>
+          <p id="error-text">Sorry, page is not found.</p>
         </div>
       </main>
     </>
