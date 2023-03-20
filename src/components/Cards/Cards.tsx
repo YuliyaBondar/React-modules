@@ -19,7 +19,7 @@ const data = await getData<IData[]>();
 
 function Cards() {
   return (
-    <div className="cards__container">
+    <div className="cards__container" data-testid="cards">
       {data.map((card) => (
         <div key={card.id} className="cards__item">
           <img src={card.image} alt={card.name} className="cards__item_img" />

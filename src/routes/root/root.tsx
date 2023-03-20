@@ -10,7 +10,7 @@ function Root() {
     <>
       <Header title={'Home'} />
       <main className="main">
-        <div className="home-page" id="home-page">
+        <div className="home-page" data-testid="home-page">
           <SearchBar />
           <Cards />
         </div>
