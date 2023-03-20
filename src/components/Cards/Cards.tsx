@@ -3,23 +3,22 @@ import { IData } from 'types/types';
 
 import './Cards.css';
 
-async function getData<T>(): Promise<T> {
+async function getData(): Promise<Array<IData>> {
   const response = await fetch(
     'https://raw.githubusercontent.com/YuliyaBondar/image-data/master/cards.json'
   );
   try {
-    const body = await response.json();
-    return body;
+    return await response.json();
   } catch (error) {
     throw new Error(response.statusText);
   }
 }
 
-const data = await getData<IData[]>();
+const data: IData[] = await getData();
 
 function Cards() {
   return (
-    <div className="cards__container" data-testid="cards">
+    <div className="cards__container">
       {data.map((card) => (
         <div key={card.id} className="cards__item">
           <img src={card.image} alt={card.name} className="cards__item_img" />
