@@ -1,5 +1,4 @@
-import React from 'react';
-import { IData } from 'utils/interfaces_and_types';
+import { IData } from '../../utils/interfaces_and_types';
 
 import './Card.css';
 

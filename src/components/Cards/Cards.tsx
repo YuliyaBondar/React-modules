@@ -1,6 +1,5 @@
 import Card from '../Card/Card';
-import React from 'react';
-import { IData } from 'utils/interfaces_and_types';
+import { IData } from '../../utils/interfaces_and_types';
 import cardsData from '../../utils/cardsData';
 
 import './Cards.css';
