@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Code coverage report for components/Cards/Cards.tsx</title>
+    <title>Code coverage report for routes/root/root.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -18,20 +18,19 @@
     <div class="wrapper">
       <div class="pad1">
         <h1>
-          <a href="../../index.html">All files</a> /
-          <a href="index.html">components/Cards</a> Cards.tsx
+          <a href="../../index.html">All files</a> / <a href="index.html">routes/root</a> root.tsx
         </h1>
         <div class="clearfix">
           <div class="fl pad1y space-right2">
             <span class="strong">100% </span>
             <span class="quiet">Statements</span>
-            <span class="fraction">20/20</span>
+            <span class="fraction">22/22</span>
           </div>
 
           <div class="fl pad1y space-right2">
             <span class="strong">100% </span>
             <span class="quiet">Branches</span>
-            <span class="fraction">2/2</span>
+            <span class="fraction">1/1</span>
           </div>
 
           <div class="fl pad1y space-right2">
@@ -43,7 +42,7 @@
           <div class="fl pad1y space-right2">
             <span class="strong">100% </span>
             <span class="quiet">Lines</span>
-            <span class="fraction">20/20</span>
+            <span class="fraction">22/22</span>
           </div>
         </div>
         <p class="quiet">
@@ -79,7 +78,9 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -88,37 +89,41 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Card from '../Card/Card';
-import React from 'react';
-import { IData } from 'utils/interfaces_and_types';
-import cardsData from '../../utils/cardsData';
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import Header from '../../components/Header/Header';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import Cards from '../../components/Cards/Cards';
 &nbsp;
-import './Cards.css';
+import './root.css';
 &nbsp;
-const data: IData[] = cardsData;
-&nbsp;
-function Cards() {
+function Root() {
   return (
-    &lt;div className="cards__container"&gt;
-      {data.map((card) =&gt; (
-        &lt;Card card={card} key={card.id} /&gt;
-      ))}
-    &lt;/div&gt;
+    &lt;&gt;
+      &lt;Header title={'Home'} /&gt;
+      &lt;main className="main"&gt;
+        &lt;div className="home-page" data-testid="home-page"&gt;
+          &lt;SearchBar /&gt;
+          &lt;Cards /&gt;
+        &lt;/div&gt;
+      &lt;/main&gt;
+    &lt;/&gt;
   );
 }
 &nbsp;
-export default Cards;
+export default Root;
 &nbsp;</pre></td></tr></table></pre>
 
       <div class="push"></div>
