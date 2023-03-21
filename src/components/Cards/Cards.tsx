@@ -1,21 +1,11 @@
 import Card from '../Card/Card';
 import React from 'react';
 import { IData } from 'utils/interfaces_and_types';
+import cardsData from '../../utils/cardsData';
 
 import './Cards.css';
 
-async function getData(): Promise<Array<IData>> {
-  const response = await fetch(
-    'https://raw.githubusercontent.com/YuliyaBondar/image-data/master/cards.json'
-  );
-  try {
-    return await response.json();
-  } catch (error) {
-    throw new Error(response.statusText);
-  }
-}
-
-const data: IData[] = await getData();
+const data: IData[] = cardsData;
 
 function Cards() {
   return (
