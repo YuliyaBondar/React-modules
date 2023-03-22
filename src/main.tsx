@@ -39,7 +39,5 @@ try {
     throw new Error('Could not find root element with class "root"');
   }
 } catch (error) {
-  let message = 'Unknown Error';
-  if (error instanceof Error) message = error.message;
-  const errorElement = <div>{message}</div>;
+  throw new Error('Could not find root element with class "root"');
 }
