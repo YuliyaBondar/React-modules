@@ -177,22 +177,27 @@
       "15": { "start": { "line": 16, "column": 0 }, "end": { "line": 16, "column": 29 } },
       "16": { "start": { "line": 17, "column": 0 }, "end": { "line": 17, "column": 33 } },
       "17": { "start": { "line": 18, "column": 0 }, "end": { "line": 18, "column": 40 } },
-      "18": { "start": { "line": 19, "column": 0 }, "end": { "line": 19, "column": 74 } },
+      "18": { "start": { "line": 19, "column": 0 }, "end": { "line": 19, "column": 50 } },
       "19": { "start": { "line": 20, "column": 0 }, "end": { "line": 20, "column": 18 } },
       "20": { "start": { "line": 21, "column": 0 }, "end": { "line": 21, "column": 22 } },
       "21": { "start": { "line": 22, "column": 0 }, "end": { "line": 22, "column": 15 } },
       "22": { "start": { "line": 23, "column": 0 }, "end": { "line": 23, "column": 40 } },
-      "23": { "start": { "line": 24, "column": 0 }, "end": { "line": 24, "column": 80 } },
+      "23": { "start": { "line": 24, "column": 0 }, "end": { "line": 24, "column": 55 } },
       "24": { "start": { "line": 25, "column": 0 }, "end": { "line": 25, "column": 22 } },
       "25": { "start": { "line": 26, "column": 0 }, "end": { "line": 26, "column": 22 } },
       "26": { "start": { "line": 27, "column": 0 }, "end": { "line": 27, "column": 15 } },
-      "27": { "start": { "line": 28, "column": 0 }, "end": { "line": 28, "column": 13 } },
-      "28": { "start": { "line": 29, "column": 0 }, "end": { "line": 29, "column": 12 } },
-      "29": { "start": { "line": 30, "column": 0 }, "end": { "line": 30, "column": 13 } },
-      "30": { "start": { "line": 31, "column": 0 }, "end": { "line": 31, "column": 4 } },
-      "31": { "start": { "line": 32, "column": 0 }, "end": { "line": 32, "column": 1 } },
-      "32": { "start": { "line": 33, "column": 0 }, "end": { "line": 33, "column": 0 } },
-      "33": { "start": { "line": 34, "column": 0 }, "end": { "line": 34, "column": 22 } }
+      "27": { "start": { "line": 28, "column": 0 }, "end": { "line": 28, "column": 40 } },
+      "28": { "start": { "line": 29, "column": 0 }, "end": { "line": 29, "column": 54 } },
+      "29": { "start": { "line": 30, "column": 0 }, "end": { "line": 30, "column": 18 } },
+      "30": { "start": { "line": 31, "column": 0 }, "end": { "line": 31, "column": 22 } },
+      "31": { "start": { "line": 32, "column": 0 }, "end": { "line": 32, "column": 15 } },
+      "32": { "start": { "line": 33, "column": 0 }, "end": { "line": 33, "column": 13 } },
+      "33": { "start": { "line": 34, "column": 0 }, "end": { "line": 34, "column": 12 } },
+      "34": { "start": { "line": 35, "column": 0 }, "end": { "line": 35, "column": 13 } },
+      "35": { "start": { "line": 36, "column": 0 }, "end": { "line": 36, "column": 4 } },
+      "36": { "start": { "line": 37, "column": 0 }, "end": { "line": 37, "column": 1 } },
+      "37": { "start": { "line": 38, "column": 0 }, "end": { "line": 38, "column": 0 } },
+      "38": { "start": { "line": 39, "column": 0 }, "end": { "line": 39, "column": 22 } }
     },
     "s": {
       "0": 1,
@@ -205,7 +210,7 @@
       "7": 1,
       "8": 4,
       "9": 4,
-      "10": 8,
+      "10": 12,
       "11": 4,
       "12": 4,
       "13": 4,
@@ -227,15 +232,20 @@
       "29": 4,
       "30": 4,
       "31": 4,
-      "32": 1,
-      "33": 1
+      "32": 4,
+      "33": 4,
+      "34": 4,
+      "35": 4,
+      "36": 4,
+      "37": 1,
+      "38": 1
     },
     "branchMap": {
       "0": {
         "type": "branch",
         "line": 9,
-        "loc": { "start": { "line": 9, "column": 0 }, "end": { "line": 32, "column": 1 } },
-        "locations": [{ "start": { "line": 9, "column": 0 }, "end": { "line": 32, "column": 1 } }]
+        "loc": { "start": { "line": 9, "column": 0 }, "end": { "line": 37, "column": 1 } },
+        "locations": [{ "start": { "line": 9, "column": 0 }, "end": { "line": 37, "column": 1 } }]
       },
       "1": {
         "type": "branch",
@@ -260,12 +270,12 @@
         ]
       }
     },
-    "b": { "0": [4], "1": [8], "2": [4], "3": [4] },
+    "b": { "0": [4], "1": [12], "2": [4], "3": [8] },
     "fnMap": {
       "0": {
         "name": "Header",
-        "decl": { "start": { "line": 9, "column": 0 }, "end": { "line": 32, "column": 1 } },
-        "loc": { "start": { "line": 9, "column": 0 }, "end": { "line": 32, "column": 1 } },
+        "decl": { "start": { "line": 9, "column": 0 }, "end": { "line": 37, "column": 1 } },
+        "loc": { "start": { "line": 9, "column": 0 }, "end": { "line": 37, "column": 1 } },
         "line": 9
       },
       "1": {
@@ -275,7 +285,7 @@
         "line": 10
       }
     },
-    "f": { "0": 4, "1": 8 }
+    "f": { "0": 4, "1": 12 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\SearchBar\\SearchBar.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\SearchBar\\SearchBar.tsx",
