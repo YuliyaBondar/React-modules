@@ -13,7 +13,7 @@ export interface IData {
   brand: string;
   category: string;
   color: string;
-  size: string;
+  sizes: Array<string>;
   material: string;
   rating: number;
 }

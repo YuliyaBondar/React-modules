@@ -31,7 +31,7 @@ class SearchBar extends React.Component<Props, SearchState> {
           type="search"
           value={this.state.searchValue}
           onInput={this.handleSearchChange}
-          className="search-input"
+          className="form__input_text search-input"
         />
       </form>
     );
