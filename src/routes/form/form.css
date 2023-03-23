@@ -80,6 +80,7 @@ label {
 
 .flex__container {
   display: flex;
+  column-gap: 20px;
 }
 
 @media (max-width: 430px) {
