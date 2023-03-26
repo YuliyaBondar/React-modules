@@ -22,7 +22,7 @@ function Card({ card }: Props) {
         </p>
         <p>
           <span className="f-bold">Is formely used:</span>{' '}
-          {card.isFormelyUsed == 'off' ? 'no' : 'yes'}
+          {card.isFormelyUsed == true ? 'yes' : 'no'}
         </p>
         <p>
           <span className="f-bold">Material:</span> {card.material}

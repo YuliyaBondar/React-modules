@@ -7,7 +7,11 @@ import './form.css';
 
 type Props = {};
 
-class Form extends React.Component<Props, IData[]> {
+type SearchState = {
+  createdCards: IData[];
+};
+
+class Form extends React.Component<Props, SearchState> {
   productNameInput: React.RefObject<HTMLInputElement>;
   releaseDateInput: React.RefObject<HTMLInputElement>;
   categorySelectValue: React.RefObject<HTMLSelectElement>;
@@ -39,14 +43,14 @@ class Form extends React.Component<Props, IData[]> {
     alert('The data has been saved.');
     const createdCards = this.state.createdCards;
     const createdCard = {
-      name: this.productNameInput.current.value,
-      releaseDate: this.releaseDateInput.current.value,
-      image: URL.createObjectURL(this.imageFileInput.current.files[0]),
-      category: this.categorySelectValue.current.value,
-      isFormelyUsed: this.isFormelyUsed.current.checked,
-      material: this.materialCottonRadioInput.current.checked
-        ? this.materialCottonRadioInput.current.value
-        : this.materialDenimRadioInput.current.value,
+      name: this.productNameInput.current?.value,
+      releaseDate: this.releaseDateInput.current?.value,
+      image: URL.createObjectURL(this.imageFileInput.current!.files[0]),
+      category: this.categorySelectValue.current?.value,
+      isFormelyUsed: this.isFormelyUsed.current?.checked,
+      material: this.materialCottonRadioInput.current?.checked
+        ? this.materialCottonRadioInput.current?.value
+        : this.materialDenimRadioInput.current?.value,
     };
     createdCards.push(createdCard);
     this.setState({ createdCards });
@@ -55,7 +59,6 @@ class Form extends React.Component<Props, IData[]> {
   }
 
   render() {
-    console.log(this.state.createdCards);
     return (
       <>
         <Header title={'Form'} />
