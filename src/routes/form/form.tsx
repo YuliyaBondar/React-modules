@@ -41,7 +41,7 @@ class Form extends React.Component<Props, IData[]> {
     const createdCard = {
       name: this.productNameInput.current.value,
       releaseDate: this.releaseDateInput.current.value,
-      image: this.imageFileInput.current.value,
+      image: URL.createObjectURL(this.imageFileInput.current.files[0]),
       category: this.categorySelectValue.current.value,
       isFormelyUsed: this.isFormelyUsed.current.checked,
       material: this.materialCottonRadioInput.current.checked
