@@ -64,7 +64,7 @@ class Form extends React.Component<Props, SearchState> {
         <Header title={'Form'} />
         <main className="main">
           <div className="form-page">
-            <form onSubmit={this.handleSubmit} className="form">
+            <form onSubmit={this.handleSubmit} className="form" data-testid="form">
               <label>
                 <span>Product name:</span>
                 <input
