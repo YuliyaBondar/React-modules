@@ -7,7 +7,7 @@ import './form.css';
 
 type Props = {};
 
-class Form extends React.Component<Props, IData> {
+class Form extends React.Component<Props, IData[]> {
   productNameInput: React.RefObject<HTMLInputElement>;
   releaseDateInput: React.RefObject<HTMLInputElement>;
   categorySelectValue: React.RefObject<HTMLSelectElement>;
@@ -24,15 +24,18 @@ class Form extends React.Component<Props, IData> {
     this.imageFileInput = React.createRef();
     this.isFormelyUsed = React.createRef();
     this.materialRadioInput = React.createRef();
-    this.state = JSON.parse(localStorage.getItem('createdCard')) || [];
+    this.state = {
+      createdCards: JSON.parse(localStorage.getItem('createdCards') || '[]'),
+    };
   }
 
   componentDidUpdate() {
-    localStorage.setItem('createdCard', JSON.stringify(this.state));
+    localStorage.setItem('createdCards', JSON.stringify(this.state.createdCards));
   }
 
   handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     alert('The data has been saved.');
+    const createdCards = this.state.createdCards;
     const createdCard = {
       name: this.productNameInput.current.value,
       releaseDate: this.releaseDateInput.current.value,
@@ -41,12 +44,13 @@ class Form extends React.Component<Props, IData> {
       isFormelyUsed: this.isFormelyUsed.current.value,
       material: this.materialRadioInput.current.value,
     };
-    this.setState({ createdCard });
+    createdCards.push(createdCard);
+    this.setState({ createdCards });
     event.preventDefault();
   }
 
   render() {
-    console.log([this.state.createdCard]);
+    console.log(this.state.createdCards);
     return (
       <>
         <Header title={'Form'} />
@@ -111,7 +115,7 @@ class Form extends React.Component<Props, IData> {
               </label>
               <input type="submit" value="Submit" className="form__input_submit" />
             </form>
-            {this.state ? <Cards cards={[this.state.createdCard]} /> : ''}
+            {this.state ? <Cards cards={this.state.createdCards} /> : ''}
           </div>
         </main>
       </>
