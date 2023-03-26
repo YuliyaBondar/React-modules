@@ -1,4 +1,4 @@
-import { IData } from '../../utils/interfaces_and_types';
+import { IData } from '../../utils/interfaces';
 
 import './Card.css';
 
@@ -15,12 +15,18 @@ function Card({ card }: Props) {
           <span className="f-bold">{card.name}</span>
         </p>
         <p>
-          <span className="f-bold">Price:</span> {card.price}$
+          <span className="f-bold">Release date:</span> {card.releaseDate}
         </p>
         <p>
-          <span className="f-bold">Brand:</span> {card.brand}
+          <span className="f-bold">Category:</span> {card.category}
         </p>
-        <p>{card.rating}☆</p>
+        <p>
+          <span className="f-bold">Is formely used:</span>{' '}
+          {card.isFormelyUsed == 'off' ? 'no' : 'yes'}
+        </p>
+        <p>
+          <span className="f-bold">Material:</span> {card.material}
+        </p>
       </div>
     </div>
   );

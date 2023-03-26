@@ -1,7 +1,12 @@
 import React from 'react';
-import { Props, SearchState } from '../../utils/interfaces_and_types';
 
 import './SearchBar.css';
+
+type Props = {};
+
+type SearchState = {
+  searchValue: string;
+};
 
 class SearchBar extends React.Component<Props, SearchState> {
   constructor(props: Props) {
