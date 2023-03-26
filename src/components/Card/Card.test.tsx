@@ -11,7 +11,7 @@ describe('Card Component', () => {
       releaseDate: '2021-01-02',
       image: 'https://images.satu.kz/199025374_w640_h640_futbolka-nike.jpg',
       category: 'Футболки',
-      isFormelyUsed: 'off',
+      isFormelyUsed: true,
       material: 'хлопок',
     };
     render(
