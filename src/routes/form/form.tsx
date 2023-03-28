@@ -5,7 +5,7 @@ import { IData } from '../../utils/interfaces';
 
 import './form.css';
 
-type Props = {};
+type Props = Record<never, never>;
 
 type SearchState = {
   createdCards: IData[];

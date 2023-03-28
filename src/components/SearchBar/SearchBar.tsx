@@ -2,7 +2,7 @@ import React from 'react';
 
 import './SearchBar.css';
 
-type Props = {};
+type Props = Record<never, never>;
 
 type SearchState = {
   searchValue: string;
