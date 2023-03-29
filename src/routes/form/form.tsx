@@ -87,7 +87,6 @@ class Form extends React.Component<Props, SearchState> {
                 <span>Category:</span>
                 <select
                   name="selectedOption"
-                  defaultValue="option_1"
                   ref={this.categorySelectValue}
                   className="form__input_select"
                   required

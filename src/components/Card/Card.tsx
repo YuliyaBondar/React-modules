@@ -11,9 +11,7 @@ function Card({ card }: Props) {
     <div className="cards__item">
       <img src={card.image} alt={card.name} className="cards__item_img" />
       <div className="cards__item_characteristics">
-        <p>
-          <span className="f-bold">{card.name}</span>
-        </p>
+        <p>{card.name}</p>
         <p>
           <span className="f-bold">Release date:</span> {card.releaseDate}
         </p>
