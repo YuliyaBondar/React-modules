@@ -1,18 +1,36 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import './Header.css';
 
-type Props = {
-  title: string;
-};
+function Header() {
+  const location = useLocation();
 
-function Header({ title }: Props) {
+  const getCurrentPage = () => {
+    switch (location.pathname) {
+      case '': {
+        return 'Home';
+      }
+      case '/': {
+        return 'Home';
+      }
+      case '/about': {
+        return 'About us';
+      }
+      case '/form': {
+        return 'Form';
+      }
+      default: {
+        return '404';
+      }
+    }
+  };
+
   const setActive = ({ isActive }: { isActive: boolean }) =>
     isActive ? 'nav-list__link_active' : '';
 
   return (
     <header className="header">
-      <h1>{title}</h1>
+      <h1>{getCurrentPage()}</h1>
       <nav data-testid="nav">
         <ul className="nav-list">
           <li className="nav-list_item">
