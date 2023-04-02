@@ -40,8 +40,6 @@ function Form() {
     localStorage.setItem('createdCards', JSON.stringify(createdCards));
   }, [createdCards]);
 
-  console.log(materialCottonRadioInput);
-
   return (
     <div className="form-page">
       <form onSubmit={handleSubmit} className="form" data-testid="form">
