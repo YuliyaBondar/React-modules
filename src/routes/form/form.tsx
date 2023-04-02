@@ -7,7 +7,6 @@ function Form() {
   const imageFileInput = useRef<HTMLInputElement>(null);
   const materialCottonRadioInput = useRef<HTMLInputElement>(null);
   const materialDenimRadioInput = useRef<HTMLInputElement>(null);
-
   const [productNameInput, setProductNameInput] = useState('');
   const [releaseDateInput, setReleaseDateInput] = useState('');
   const [categorySelectValue, setCategorySelectValue] = useState('Футболки');
@@ -19,7 +18,6 @@ function Form() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     alert('The data has been saved.');
-    event.preventDefault();
     setCreatedCards([
       ...createdCards,
       {
@@ -33,6 +31,7 @@ function Form() {
           : materialDenimRadioInput.current?.value,
       },
     ]);
+    event.preventDefault();
     (event.target as HTMLFormElement).reset();
   };
 

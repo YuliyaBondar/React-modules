@@ -8,7 +8,7 @@ describe('Header Component', () => {
   test('If Header is rendered!', () => {
     render(
       <BrowserRouter>
-        <Header title="About us" />
+        <Header />
       </BrowserRouter>
     );
     expect(screen.getByTestId('nav')).toBeInTheDocument();
