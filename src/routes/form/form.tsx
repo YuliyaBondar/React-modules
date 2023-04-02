@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Cards from '../../components/Cards/Cards';
 
 import './form.css';
 
 function Form() {
+  const imageFileInput = useRef<HTMLInputElement>(null);
+  const materialCottonRadioInput = useRef<HTMLInputElement>(null);
+  const materialDenimRadioInput = useRef<HTMLInputElement>(null);
+
   const [productNameInput, setProductNameInput] = useState('');
   const [releaseDateInput, setReleaseDateInput] = useState('');
   const [categorySelectValue, setCategorySelectValue] = useState('Футболки');
-  const [imageFileInput, setImageFileInput] = useState('');
   const [isFormelyUsed, setIsFormelyUsed] = useState(Boolean);
-  const [materialCottonRadioInput, setMaterialCottonRadioInput] = useState('');
-  const [materialDenimRadioInput, setMaterialDenimRadioInput] = useState('');
 
   const [createdCards, setCreatedCards] = useState(() => {
     return JSON.parse(localStorage.getItem('createdCards') || '[]');
@@ -19,16 +20,17 @@ function Form() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     alert('The data has been saved.');
     event.preventDefault();
-    const blob = new Blob([imageFileInput], { type: 'image/*' });
     setCreatedCards([
       ...createdCards,
       {
         name: productNameInput,
         releaseDate: releaseDateInput,
-        image: URL.createObjectURL(blob),
+        image: URL.createObjectURL(imageFileInput.current!.files![0]),
         category: categorySelectValue,
         isFormelyUsed: isFormelyUsed,
-        material: materialCottonRadioInput ? materialCottonRadioInput : materialDenimRadioInput,
+        material: materialCottonRadioInput.current?.checked
+          ? materialCottonRadioInput.current?.value
+          : materialDenimRadioInput.current?.value,
       },
     ]);
     (event.target as HTMLFormElement).reset();
@@ -38,7 +40,7 @@ function Form() {
     localStorage.setItem('createdCards', JSON.stringify(createdCards));
   }, [createdCards]);
 
-  console.log(imageFileInput);
+  console.log(materialCottonRadioInput);
 
   return (
     <div className="form-page">
@@ -90,18 +92,13 @@ function Form() {
               type="radio"
               name="switcher"
               value="Хлопок"
-              onChange={(e) => setMaterialCottonRadioInput(e.target.value)}
+              ref={materialCottonRadioInput}
               required
             />
           </label>
           <label>
             <span>Деним:</span>
-            <input
-              type="radio"
-              name="switcher"
-              value="Деним"
-              onChange={(e) => setMaterialDenimRadioInput(e.target.value)}
-            />
+            <input type="radio" name="switcher" value="Деним" ref={materialDenimRadioInput} />
           </label>
         </div>
         <label>
@@ -109,7 +106,7 @@ function Form() {
           <input
             type="file"
             accept="image/*"
-            onChange={(e) => setImageFileInput(e.target.value)}
+            ref={imageFileInput}
             className="form__input_file"
             required
           />
