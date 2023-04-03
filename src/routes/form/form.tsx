@@ -17,9 +17,9 @@ function Form() {
     return JSON.parse(localStorage.getItem('createdCards') || '[]');
   });
 
-  const { handleSubmit, reset } = useForm();
+  const { handleSubmit } = useForm();
 
-  const onSubmit = () => {
+  const onSubmit = handleSubmit((data, e) => {
     alert('The data has been saved.');
     setCreatedCards([
       ...createdCards,
@@ -34,8 +34,8 @@ function Form() {
           : materialDenimRadioInput.current?.value,
       },
     ]);
-    reset();
-  };
+    e?.target.reset();
+  });
 
   useEffect(() => {
     localStorage.setItem('createdCards', JSON.stringify(createdCards));
@@ -43,7 +43,7 @@ function Form() {
 
   return (
     <div className="form-page">
-      <form onSubmit={handleSubmit(onSubmit)} className="form" data-testid="form">
+      <form onSubmit={onSubmit} className="form" data-testid="form">
         <label>
           <span>Product name:</span>
           <input
