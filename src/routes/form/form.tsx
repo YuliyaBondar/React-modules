@@ -64,6 +64,7 @@ function Form() {
             })}
             type="date"
             className="form__input_date"
+            data-testid="input_date"
             required={true}
           />
         </label>
@@ -118,7 +119,12 @@ function Form() {
             required
           />
         </label>
-        <input type="submit" value="Submit" className="form__input_submit" />
+        <input
+          type="submit"
+          value="Submit"
+          className="form__input_submit"
+          data-testid="input_submit"
+        />
       </form>
       <Cards cards={createdCards} />
     </div>
