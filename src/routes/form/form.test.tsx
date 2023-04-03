@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { describe, expect, test } from 'vitest';
 import Form from './form';
@@ -13,5 +13,72 @@ describe('Form', () => {
     );
     expect(screen.getByTestId('form')).toBeInTheDocument();
     expect(screen.getByDisplayValue('Submit')).toBeInTheDocument();
+
+    const inputText = screen.getByTestId('input_text') as HTMLInputElement | null;
+    expect(inputText).toBeTruthy();
+    expect(inputText?.textContent).toBe('');
+    if (inputText) {
+      inputText.textContent = 'Футболка Nike';
+      expect(inputText.textContent).toBe('Футболка Nike');
+      expect(inputText.type).toBe('text');
+      fireEvent.change(inputText, {
+        target: {
+          value: 'Футболка Nike',
+        },
+      });
+      expect(inputText.value).toBe('Футболка Nike');
+      expect(inputText).toBeRequired();
+    }
+
+    const inputDate = screen.getByTestId('input_date') as HTMLInputElement | null;
+    expect(inputDate).toBeTruthy();
+    expect(inputDate?.textContent).toBe('');
+    if (inputDate) {
+      inputDate.textContent = '2023-01-04';
+      expect(inputDate.textContent).toBe('2023-01-04');
+      expect(inputDate.type).toBe('date');
+      fireEvent.change(inputDate, {
+        target: {
+          value: '2023-01-04',
+        },
+      });
+      expect(inputDate.value).toBe('2023-01-04');
+      expect(inputDate).toBeRequired();
+    }
+
+    const inputIsFormelyUsed = screen.getByTestId('input_checkbox') as HTMLInputElement | null;
+    expect(inputIsFormelyUsed).toBeTruthy();
+    expect(inputIsFormelyUsed?.checked).toBe(false);
+    if (inputIsFormelyUsed) {
+      inputIsFormelyUsed.checked = true;
+      expect(inputIsFormelyUsed.checked).toBe(true);
+      expect(inputIsFormelyUsed.type).toBe('checkbox');
+      fireEvent.change(inputIsFormelyUsed, {
+        target: {
+          checked: true,
+        },
+      });
+      expect(inputIsFormelyUsed).toBeRequired();
+    }
+
+    const categorySelectValue = screen.getByTestId('select') as HTMLInputElement | null;
+    expect(categorySelectValue).toBeTruthy();
+    expect(categorySelectValue?.value).toBe('Футболки');
+    if (categorySelectValue) {
+      categorySelectValue.value = 'Джинсы';
+      expect(categorySelectValue.value).toBe('Джинсы');
+      fireEvent.change(categorySelectValue, {
+        target: {
+          value: 'Джинсы',
+        },
+      });
+      expect(categorySelectValue).toBeRequired();
+    }
+
+    const imageFileInput = screen.getByTestId('input_file') as HTMLInputElement | null;
+    expect(imageFileInput).toBeTruthy();
+    if (imageFileInput) {
+      expect(imageFileInput).toBeRequired();
+    }
   });
 });

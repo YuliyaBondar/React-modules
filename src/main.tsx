@@ -6,6 +6,7 @@ import Root from './routes/root/root';
 import ErrorPage from './routes/error-page/error-page';
 import AboutPage from './routes/about-page/about-page';
 import Form from './routes/form/form';
+import Header from './components/Header/Header';
 
 import './index.css';
 
@@ -15,12 +16,15 @@ try {
   const AppWrapper = () => (
     <React.StrictMode>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Root />} errorElement={<ErrorPage />}></Route>
-          <Route path="about" element={<AboutPage />}></Route>
-          <Route path="*" element={<ErrorPage />}></Route>
-          <Route path="form" element={<Form />}></Route>
-        </Routes>
+        <Header />
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<Root />} errorElement={<ErrorPage />}></Route>
+            <Route path="about" element={<AboutPage />}></Route>
+            <Route path="*" element={<ErrorPage />}></Route>
+            <Route path="form" element={<Form />}></Route>
+          </Routes>
+        </main>
       </BrowserRouter>
     </React.StrictMode>
   );
