@@ -17,22 +17,7 @@ function Form() {
     return JSON.parse(localStorage.getItem('createdCards') || '[]');
   });
 
-  const {
-    handleSubmit,
-    reset,
-    formState,
-    formState: { isSubmitSuccessful },
-  } = useForm({
-    defaultValues: {
-      productNameInput: '',
-      releaseDateInput: '',
-      imageFileInput: null,
-      categorySelectValue: 'Футболки',
-      isFormelyUsed: false,
-      materialCottonRadioInput: null,
-      materialDenimRadioInput: null,
-    },
-  });
+  const { handleSubmit, reset } = useForm();
 
   const onSubmit = () => {
     alert('The data has been saved.');
@@ -49,22 +34,12 @@ function Form() {
           : materialDenimRadioInput.current?.value,
       },
     ]);
+    reset();
   };
 
   useEffect(() => {
     localStorage.setItem('createdCards', JSON.stringify(createdCards));
-    if (formState.isSubmitSuccessful) {
-      reset({
-        productNameInput: '',
-        releaseDateInput: '',
-        imageFileInput: null,
-        categorySelectValue: 'Футболки',
-        isFormelyUsed: false,
-        materialCottonRadioInput: null,
-        materialDenimRadioInput: null,
-      });
-    }
-  }, [formState, isSubmitSuccessful, createdCards, reset]);
+  }, [createdCards]);
 
   return (
     <div className="form-page">
