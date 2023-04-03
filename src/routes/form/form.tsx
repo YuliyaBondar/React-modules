@@ -50,7 +50,9 @@ function Form() {
             {...register('productNameInput', {
               onChange: (e) => setProductNameInput(e.target.value),
             })}
+            type="text"
             className="form__input_text"
+            data-testid="input_text"
             required={true}
           />
         </label>
