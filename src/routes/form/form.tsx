@@ -122,12 +122,7 @@ function Form() {
             required
           />
         </label>
-        <input
-          type="submit"
-          value="Submit"
-          className="form__input_submit"
-          data-testid="input_submit"
-        />
+        <input type="submit" value="Submit" className="form__input_submit" />
       </form>
       <Cards cards={createdCards} />
     </div>
