@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import Cards from '../../components/Cards/Cards';
 
 import './form.css';
@@ -10,13 +11,30 @@ function Form() {
   const [productNameInput, setProductNameInput] = useState('');
   const [releaseDateInput, setReleaseDateInput] = useState('');
   const [categorySelectValue, setCategorySelectValue] = useState('Футболки');
-  const [isFormelyUsed, setIsFormelyUsed] = useState(Boolean);
+  const [isFormelyUsed, setIsFormelyUsed] = useState(false);
 
   const [createdCards, setCreatedCards] = useState(() => {
     return JSON.parse(localStorage.getItem('createdCards') || '[]');
   });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const {
+    handleSubmit,
+    reset,
+    formState,
+    formState: { isSubmitSuccessful },
+  } = useForm({
+    defaultValues: {
+      productNameInput: '',
+      releaseDateInput: '',
+      imageFileInput: null,
+      categorySelectValue: 'Футболки',
+      isFormelyUsed: false,
+      materialCottonRadioInput: null,
+      materialDenimRadioInput: null,
+    },
+  });
+
+  const onSubmit = () => {
     alert('The data has been saved.');
     setCreatedCards([
       ...createdCards,
@@ -31,17 +49,26 @@ function Form() {
           : materialDenimRadioInput.current?.value,
       },
     ]);
-    event.preventDefault();
-    (event.target as HTMLFormElement).reset();
   };
 
   useEffect(() => {
     localStorage.setItem('createdCards', JSON.stringify(createdCards));
-  }, [createdCards]);
+    if (formState.isSubmitSuccessful) {
+      reset({
+        productNameInput: '',
+        releaseDateInput: '',
+        imageFileInput: null,
+        categorySelectValue: 'Футболки',
+        isFormelyUsed: false,
+        materialCottonRadioInput: null,
+        materialDenimRadioInput: null,
+      });
+    }
+  }, [formState, isSubmitSuccessful, createdCards, reset]);
 
   return (
     <div className="form-page">
-      <form onSubmit={handleSubmit} className="form" data-testid="form">
+      <form onSubmit={handleSubmit(onSubmit)} className="form" data-testid="form">
         <label>
           <span>Product name:</span>
           <input
