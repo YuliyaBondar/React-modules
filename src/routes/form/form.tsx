@@ -17,9 +17,9 @@ function Form() {
     return JSON.parse(localStorage.getItem('createdCards') || '[]');
   });
 
-  const { handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
 
-  const onSubmit = handleSubmit((data, e) => {
+  const onSubmit = handleSubmit((_, e) => {
     alert('The data has been saved.');
     setCreatedCards([
       ...createdCards,
@@ -47,26 +47,30 @@ function Form() {
         <label>
           <span>Product name:</span>
           <input
-            type="text"
+            {...register('productNameInput', {
+              onChange: (e) => setProductNameInput(e.target.value),
+            })}
             className="form__input_text"
-            onChange={(e) => setProductNameInput(e.target.value)}
-            required
+            required={true}
           />
         </label>
         <label>
           <span>Release date:</span>
           <input
+            {...register('releaseDateInput', {
+              onChange: (e) => setReleaseDateInput(e.target.value),
+            })}
             type="date"
-            onChange={(e) => setReleaseDateInput(e.target.value)}
             className="form__input_date"
-            required
+            required={true}
           />
         </label>
         <label>
           <span>Category:</span>
           <select
-            name="selectedOption"
-            onChange={(e) => setCategorySelectValue(e.target.value)}
+            {...register('categorySelectValue', {
+              onChange: (e) => setCategorySelectValue(e.target.value),
+            })}
             className="form__input_select"
             required={true}
           >
@@ -79,10 +83,12 @@ function Form() {
           <label>
             <span className="isFormelyUsed">Is formely used:</span>
             <input
+              {...register('isFormelyUsed', {
+                onChange: (e) => setIsFormelyUsed(e.target.checked),
+              })}
               type="checkbox"
-              onChange={(e) => setIsFormelyUsed(e.target.checked)}
               className="h-mr30"
-              required
+              required={true}
             />
           </label>
           <label>
