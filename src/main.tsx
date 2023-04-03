@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import Root from './routes/root/root';
 import ErrorPage from './routes/error-page/error-page';
 import AboutPage from './routes/about-page/about-page';
+import Form from './routes/form/form';
 
 import './index.css';
 
@@ -18,6 +19,7 @@ try {
           <Route path="/" element={<Root />} errorElement={<ErrorPage />}></Route>
           <Route path="about" element={<AboutPage />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
+          <Route path="form" element={<Form />}></Route>
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
@@ -37,7 +39,5 @@ try {
     throw new Error('Could not find root element with class "root"');
   }
 } catch (error) {
-  let message = 'Unknown Error';
-  if (error instanceof Error) message = error.message;
-  const errorElement = <div>{message}</div>;
+  throw new Error('Could not find root element with class "root"');
 }

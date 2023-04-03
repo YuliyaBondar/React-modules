@@ -25,13 +25,13 @@
           <div class="fl pad1y space-right2">
             <span class="strong">100% </span>
             <span class="quiet">Statements</span>
-            <span class="fraction">29/29</span>
+            <span class="fraction">35/35</span>
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
+            <span class="strong">50% </span>
             <span class="quiet">Branches</span>
-            <span class="fraction">1/1</span>
+            <span class="fraction">1/2</span>
           </div>
 
           <div class="fl pad1y space-right2">
@@ -43,7 +43,7 @@
           <div class="fl pad1y space-right2">
             <span class="strong">100% </span>
             <span class="quiet">Lines</span>
-            <span class="fraction">29/29</span>
+            <span class="fraction">35/35</span>
           </div>
         </div>
         <p class="quiet">
@@ -88,7 +88,13 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -96,28 +102,34 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { IData } from '../../utils/interfaces_and_types';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { IData } from '../../utils/interfaces';
 &nbsp;
 import './Card.css';
 &nbsp;
@@ -134,12 +146,18 @@ function Card({ card }: Props) {
           &lt;span className="f-bold"&gt;{card.name}&lt;/span&gt;
         &lt;/p&gt;
         &lt;p&gt;
-          &lt;span className="f-bold"&gt;Price:&lt;/span&gt; {card.price}$
+          &lt;span className="f-bold"&gt;Release date:&lt;/span&gt; {card.releaseDate}
         &lt;/p&gt;
         &lt;p&gt;
-          &lt;span className="f-bold"&gt;Brand:&lt;/span&gt; {card.brand}
+          &lt;span className="f-bold"&gt;Category:&lt;/span&gt; {card.category}
         &lt;/p&gt;
-        &lt;p&gt;{card.rating}☆&lt;/p&gt;
+        &lt;p&gt;
+          &lt;span className="f-bold"&gt;Is formely used:&lt;/span&gt;{' '}
+          {card.isFormelyUsed == <span class="branch-0 cbranch-no" title="branch not covered" >true ? 'yes' : '</span>no'}
+        &lt;/p&gt;
+        &lt;p&gt;
+          &lt;span className="f-bold"&gt;Material:&lt;/span&gt; {card.material}
+        &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   );
@@ -155,7 +173,7 @@ export default Card;
     <div class="footer quiet pad2 space-top1 center small">
       Code coverage generated by
       <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-      at 2023-03-21T16:57:55.827Z
+      at 2023-03-26T21:59:22.197Z
     </div>
     <script src="../../prettify.js"></script>
     <script>

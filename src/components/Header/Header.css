@@ -13,7 +13,16 @@
 
 .nav-list {
   display: flex;
+  row-gap: 10px;
   column-gap: 30px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 370px) {
+  .nav-list {
+    justify-content: space-around;
+    padding: 0 21px !important;
+  }
 }
 
 .nav-list_item a {

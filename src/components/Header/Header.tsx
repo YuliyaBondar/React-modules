@@ -16,13 +16,18 @@ function Header({ title }: Props) {
       <nav data-testid="nav">
         <ul className="nav-list">
           <li className="nav-list_item">
-            <NavLink className={setActive} to="/" data-testid="main-link">
+            <NavLink className={setActive} to="/">
               Home
             </NavLink>
           </li>
           <li className="nav-list_item">
-            <NavLink className={setActive} to="/about" data-testid="about-link">
+            <NavLink className={setActive} to="/about">
               About Us
+            </NavLink>
+          </li>
+          <li className="nav-list_item">
+            <NavLink className={setActive} to="/form">
+              Form
             </NavLink>
           </li>
         </ul>

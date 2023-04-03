@@ -1,7 +1,12 @@
 import React from 'react';
-import { Props, SearchState } from '../../utils/interfaces_and_types';
 
 import './SearchBar.css';
+
+type Props = Record<never, never>;
+
+type SearchState = {
+  searchValue: string;
+};
 
 class SearchBar extends React.Component<Props, SearchState> {
   constructor(props: Props) {
@@ -31,7 +36,7 @@ class SearchBar extends React.Component<Props, SearchState> {
           type="search"
           value={this.state.searchValue}
           onInput={this.handleSearchChange}
-          className="search-input"
+          className="form__input_text search-input"
         />
       </form>
     );

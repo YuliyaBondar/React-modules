@@ -7,17 +7,12 @@ import Card from './Card';
 describe('Card Component', () => {
   test('If Card is rendered!', () => {
     const card = {
-      id: 1,
       name: 'Футболка Nike',
-      description: 'Простая белая футболка с логотипом Nike',
-      price: 500,
+      releaseDate: '2021-01-02',
       image: 'https://images.satu.kz/199025374_w640_h640_futbolka-nike.jpg',
-      brand: 'Nike',
       category: 'Футболки',
-      color: 'белый',
-      size: 'M',
+      isFormelyUsed: true,
       material: 'хлопок',
-      rating: 4.5,
     };
     render(
       <BrowserRouter>
@@ -25,6 +20,6 @@ describe('Card Component', () => {
       </BrowserRouter>
     );
     expect(screen.getByText(card.name)).toBeInTheDocument();
-    expect(screen.getByText(card.brand)).toBeInTheDocument();
+    expect(screen.getByText(card.category)).toBeInTheDocument();
   });
 });
