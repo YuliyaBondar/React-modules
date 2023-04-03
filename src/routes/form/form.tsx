@@ -75,6 +75,7 @@ function Form() {
               onChange: (e) => setCategorySelectValue(e.target.value),
             })}
             className="form__input_select"
+            data-testid="select"
             required={true}
           >
             <option value="Футболки">Футболки</option>
@@ -91,6 +92,7 @@ function Form() {
               })}
               type="checkbox"
               className="h-mr30"
+              data-testid="input_checkbox"
               required={true}
             />
           </label>
@@ -116,6 +118,7 @@ function Form() {
             accept="image/*"
             ref={imageFileInput}
             className="form__input_file"
+            data-testid="input_file"
             required
           />
         </label>
