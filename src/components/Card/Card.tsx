@@ -28,7 +28,7 @@ function Card({ card }: Props) {
         )}
         {card.location ? (
           <p>
-            <span className="f-bold">Location:</span>
+            <span className="f-bold">Location: </span>
             {card.location.name}
           </p>
         ) : (
