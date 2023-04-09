@@ -30,33 +30,25 @@ function Card({ card }: Props) {
           <div className="modalContent">
             <CardContent card={card} />
             <div className="cards__item_characteristics">
-              {card.type ? (
+              {card.type && (
                 <p>
                   <span className="f-bold">Type:</span> {card.type}
                 </p>
-              ) : (
-                ''
               )}
-              {card.gender ? (
+              {card.gender && (
                 <p>
                   <span className="f-bold">Gender:</span> {card.gender}
                 </p>
-              ) : (
-                ''
               )}
-              {card.origin ? (
+              {card.origin && (
                 <p>
                   <span className="f-bold">Origin:</span> {card.origin.name}
                 </p>
-              ) : (
-                ''
               )}
-              {card.created ? (
+              {card.created && (
                 <p>
                   <span className="f-bold">Created:</span> {card.created}
                 </p>
-              ) : (
-                ''
               )}
             </div>
           </div>

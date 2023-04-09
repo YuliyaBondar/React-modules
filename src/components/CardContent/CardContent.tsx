@@ -12,56 +12,42 @@ function CardContent({ card }: Props) {
       <img src={card.image} alt={card.name} className="cards__item_img" />
       <div className="cards__item_characteristics">
         <p className="f-bold">{card.name}</p>
-        {card.status ? (
+        {card.status && (
           <p>
             <span className="f-bold">Status:</span> {card.status}
           </p>
-        ) : (
-          ''
         )}
-        {card.species ? (
+        {card.species && (
           <p>
             <span className="f-bold">Species:</span> {card.species}
           </p>
-        ) : (
-          ''
         )}
-        {card.location ? (
+        {card.location && (
           <p>
             <span className="f-bold">Location: </span>
             {card.location.name}
           </p>
-        ) : (
-          ''
         )}
-        {card.releaseDate ? (
+        {card.releaseDate && (
           <p>
             <span className="f-bold">Release date:</span> {card.releaseDate}
           </p>
-        ) : (
-          ''
         )}
-        {card.category ? (
+        {card.category && (
           <p>
             <span className="f-bold">Category:</span> {card.category}
           </p>
-        ) : (
-          ''
         )}
-        {card.isFormelyUsed ? (
+        {card.isFormelyUsed && (
           <p>
             <span className="f-bold">Is formely used:</span>{' '}
             {card.isFormelyUsed == true ? 'yes' : 'no'}
           </p>
-        ) : (
-          ''
         )}
-        {card.material ? (
+        {card.material && (
           <p>
             <span className="f-bold">Material:</span> {card.material}
           </p>
-        ) : (
-          ''
         )}
       </div>
     </>

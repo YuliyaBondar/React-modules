@@ -2,10 +2,10 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { describe, expect, test } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
-import Card from './CardPopUp';
+import CardPopUp from './CardPopUp';
 
-describe('Card Component', () => {
-  test('If Card is rendered!', () => {
+describe('CardPopUp Component', () => {
+  test('If CardPopUp is rendered!', () => {
     const card = {
       name: 'Футболка Nike',
       releaseDate: '2021-01-02',
@@ -13,10 +13,24 @@ describe('Card Component', () => {
       category: 'Футболки',
       isFormelyUsed: true,
       material: 'хлопок',
+      id: 1,
+      status: 'unknown',
+      species: 'Human',
+      type: 'Genetic experiment',
+      gender: 'Male',
+      origin: {
+        name: 'Earth (Replacement Dimension)',
+        url: 'https://rickandmortyapi.com/api/location/20',
+      },
+      location: {
+        name: 'Testicle Monster Dimension',
+        url: 'https://rickandmortyapi.com/api/location/21',
+      },
+      created: '2017-11-04T19:59:20.523Z',
     };
     render(
       <BrowserRouter>
-        <Card card={card} />
+        <CardPopUp card={card} />
       </BrowserRouter>
     );
     expect(screen.getByText(card.name)).toBeInTheDocument();

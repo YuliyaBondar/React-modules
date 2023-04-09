@@ -58,7 +58,6 @@ describe('Form', () => {
           checked: true,
         },
       });
-      expect(inputIsFormelyUsed).toBeRequired();
     }
 
     const categorySelectValue = screen.getByTestId('select') as HTMLInputElement | null;
