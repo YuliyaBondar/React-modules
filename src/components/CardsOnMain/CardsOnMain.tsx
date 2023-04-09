@@ -12,11 +12,14 @@ function CardsOnMain() {
   const [error, setError] = useState<Error | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState<IData | null>(null);
-  const [filteredResults, setFilteredResults] = useState<IResults[]>([]);
+  const [filteredResults, setFilteredResults] = useState(() => {
+    return JSON.parse(localStorage.getItem('filteredResults') as string) || '[]';
+  });
   const { register } = useForm();
 
   useEffect(() => {
     localStorage.setItem('searchValue', JSON.stringify(searchValue));
+    localStorage.setItem('filteredResults', JSON.stringify(filteredResults));
     fetch('https://rickandmortyapi.com/api/character')
       .then((res) => res.json())
       .then(
@@ -29,7 +32,7 @@ function CardsOnMain() {
           setError(error);
         }
       );
-  }, [searchValue]);
+  }, [searchValue, filteredResults]);
 
   const searchItems = (searchInput: string) => {
     setSearchValue(searchInput);
