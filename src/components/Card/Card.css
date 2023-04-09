@@ -1,4 +1,6 @@
 .cards__item {
+  overflow-y: hidden;
+
   width: 320px;
 
   background: #ffffff;

@@ -1,9 +1,9 @@
-import { IData } from '../../utils/interfaces';
+import { IResults } from '../../utils/interfaces';
 
 import './Card.css';
 
 type Props = {
-  card: IData;
+  card: IResults;
 };
 
 function Card({ card }: Props) {
@@ -11,20 +11,58 @@ function Card({ card }: Props) {
     <div className="cards__item">
       <img src={card.image} alt={card.name} className="cards__item_img" />
       <div className="cards__item_characteristics">
-        <p>{card.name}</p>
-        <p>
-          <span className="f-bold">Release date:</span> {card.releaseDate}
-        </p>
-        <p>
-          <span className="f-bold">Category:</span> {card.category}
-        </p>
-        <p>
-          <span className="f-bold">Is formely used:</span>{' '}
-          {card.isFormelyUsed == true ? 'yes' : 'no'}
-        </p>
-        <p>
-          <span className="f-bold">Material:</span> {card.material}
-        </p>
+        <p className="f-bold">{card.name}</p>
+        {card.status ? (
+          <p>
+            <span className="f-bold">Status:</span> {card.status}
+          </p>
+        ) : (
+          ''
+        )}
+        {card.species ? (
+          <p>
+            <span className="f-bold">Species:</span> {card.species}
+          </p>
+        ) : (
+          ''
+        )}
+        {card.location ? (
+          <p>
+            <span className="f-bold">Location:</span>
+            {card.location.name}
+          </p>
+        ) : (
+          ''
+        )}
+        {card.releaseDate ? (
+          <p>
+            <span className="f-bold">Release date:</span> {card.releaseDate}
+          </p>
+        ) : (
+          ''
+        )}
+        {card.category ? (
+          <p>
+            <span className="f-bold">Category:</span> {card.category}
+          </p>
+        ) : (
+          ''
+        )}
+        {card.isFormelyUsed ? (
+          <p>
+            <span className="f-bold">Is formely used:</span>{' '}
+            {card.isFormelyUsed == true ? 'yes' : 'no'}
+          </p>
+        ) : (
+          ''
+        )}
+        {card.material ? (
+          <p>
+            <span className="f-bold">Material:</span> {card.material}
+          </p>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );
