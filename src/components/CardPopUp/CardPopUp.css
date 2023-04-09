@@ -2,6 +2,7 @@
   overflow-y: hidden;
 
   width: 320px;
+  padding-bottom: 15px;
 
   background: #ffffff;
 
@@ -9,19 +10,21 @@
 
   box-shadow: 5px 5px 10px #96d5eb, -5px -5px 10px #f7f6f5;
 
+  cursor: pointer;
   transition: 0.2s ease-in-out;
 }
 
-.cards__item_img {
+.modalContent {
   display: flex;
-  align-items: top;
-  justify-content: right;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
 }
 
-.cards__item_characteristics {
-  padding: 15px;
+.modal img {
+  max-width: 500px;
+}
 
-  font-family: 'Lucida Sans' sans-serif;
-  font-size: 15px;
+.close {
+  float: right;
 }

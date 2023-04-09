@@ -1,0 +1,14 @@
+.cards__item_img {
+  display: flex;
+  align-items: top;
+  justify-content: right;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.cards__item_characteristics {
+  padding: 0 15px;
+
+  font-family: 'Lucida Sans' sans-serif;
+  font-size: 15px;
+}

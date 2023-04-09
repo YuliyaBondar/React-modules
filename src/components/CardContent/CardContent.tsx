@@ -1,14 +1,14 @@
 import { IResults } from '../../utils/interfaces';
 
-import './Card.css';
+import './CardContent.css';
 
 type Props = {
   card: IResults;
 };
 
-function Card({ card }: Props) {
+function CardContent({ card }: Props) {
   return (
-    <div className="cards__item">
+    <>
       <img src={card.image} alt={card.name} className="cards__item_img" />
       <div className="cards__item_characteristics">
         <p className="f-bold">{card.name}</p>
@@ -64,8 +64,8 @@ function Card({ card }: Props) {
           ''
         )}
       </div>
-    </div>
+    </>
   );
 }
 
-export default Card;
+export default CardContent;
