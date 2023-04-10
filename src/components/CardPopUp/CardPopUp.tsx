@@ -22,11 +22,6 @@ function Card({ card }: Props) {
         nested
       >
         <div className="modal">
-          <div>
-            <button onClick={close} className="close">
-              X
-            </button>
-          </div>
           <div className="modalContent">
             <CardContent card={card} />
             <div className="cards__item_characteristics">
