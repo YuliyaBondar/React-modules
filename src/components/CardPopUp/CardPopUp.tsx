@@ -1,5 +1,6 @@
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import useModal from '../../hooks/useModal';
+import Modal from '../Modal/Modal';
 import { IResults } from '../../utils/interfaces';
 import CardContent from '../CardContent/CardContent';
 
@@ -10,19 +11,15 @@ type Props = {
 };
 
 function Card({ card }: Props) {
+  const { isOpen, toggle } = useModal();
   return (
     <>
-      <Popup
-        trigger={
-          <div className="cards__item">
-            <CardContent card={card} />
-          </div>
-        }
-        modal
-        nested
-      >
+      <div className="cards__item" onClick={toggle}>
+        <CardContent card={card} />
+      </div>
+      <Modal isOpen={isOpen} toggle={toggle}>
         <div className="modal">
-          <div className="modalContent">
+          <div className="modal-content">
             <CardContent card={card} />
             <div className="cards__item_characteristics">
               {card.type && (
@@ -48,7 +45,7 @@ function Card({ card }: Props) {
             </div>
           </div>
         </div>
-      </Popup>
+      </Modal>
     </>
   );
 }

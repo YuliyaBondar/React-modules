@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681084250104" clover="3.2.0">
-  <project timestamp="1681084250104" name="All files">
-    <metrics statements="456" coveredstatements="398" conditionals="38" coveredconditionals="31" methods="17" coveredmethods="14" elements="511" coveredelements="443" complexity="0" loc="456" ncloc="456" packages="9" files="9" classes="9"/>
+<coverage generated="1681157746129" clover="3.2.0">
+  <project timestamp="1681157746129" name="All files">
+    <metrics statements="451" coveredstatements="393" conditionals="38" coveredconditionals="31" methods="17" coveredmethods="14" elements="506" coveredelements="438" complexity="0" loc="451" ncloc="451" packages="9" files="9" classes="9"/>
     <package name="components.CardContent">
       <metrics statements="57" coveredstatements="57" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="CardContent.tsx" path="D:\React2023Q1\React-modules\src\components\CardContent\CardContent.tsx">
@@ -66,9 +66,9 @@
       </file>
     </package>
     <package name="components.CardPopUp">
-      <metrics statements="61" coveredstatements="61" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+      <metrics statements="56" coveredstatements="56" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="CardPopUp.tsx" path="D:\React2023Q1\React-modules\src\components\CardPopUp\CardPopUp.tsx">
-        <metrics statements="61" coveredstatements="61" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <metrics statements="56" coveredstatements="56" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -96,10 +96,10 @@
         <line num="25" count="3" type="stmt"/>
         <line num="26" count="3" type="stmt"/>
         <line num="27" count="3" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
-        <line num="31" count="3" type="stmt"/>
+        <line num="28" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="32" count="3" type="stmt"/>
         <line num="33" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="34" count="1" type="stmt"/>
@@ -116,20 +116,15 @@
         <line num="45" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
         <line num="47" count="3" type="stmt"/>
-        <line num="48" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
+        <line num="48" count="3" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="50" count="3" type="stmt"/>
+        <line num="51" count="3" type="stmt"/>
         <line num="52" count="3" type="stmt"/>
         <line num="53" count="3" type="stmt"/>
         <line num="54" count="3" type="stmt"/>
-        <line num="55" count="3" type="stmt"/>
-        <line num="56" count="3" type="stmt"/>
-        <line num="57" count="3" type="stmt"/>
-        <line num="58" count="3" type="stmt"/>
-        <line num="59" count="3" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.Cards">

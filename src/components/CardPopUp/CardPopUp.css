@@ -14,17 +14,6 @@
   transition: 0.2s ease-in-out;
 }
 
-.modalContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 10px;
-}
-
-.modal img {
-  max-width: 500px;
-}
-
 .close {
   float: right;
 }
