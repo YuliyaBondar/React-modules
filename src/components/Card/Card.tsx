@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal';
 import { IResults } from '../../utils/interfaces';
 import CardContent from '../CardContent/CardContent';
 
-import './CardPopUp.css';
+import './Card.css';
 
 type Props = {
   card: IResults;

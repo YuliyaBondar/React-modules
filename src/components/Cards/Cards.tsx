@@ -1,4 +1,4 @@
-import Card from '../CardPopUp/CardPopUp';
+import Card from '../Card/Card';
 import { IResults } from '../../utils/interfaces';
 
 import './Cards.css';

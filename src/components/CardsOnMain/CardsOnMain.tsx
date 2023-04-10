@@ -20,7 +20,7 @@ function CardsOnMain() {
   useEffect(() => {
     localStorage.setItem('searchValue', JSON.stringify(searchValue));
     localStorage.setItem('filteredResults', JSON.stringify(filteredResults));
-    fetch(`https://rickandmortyapi.com/api/character`)
+    fetch('https://rickandmortyapi.com/api/character')
       .then((res) => res.json())
       .then(
         (result) => {

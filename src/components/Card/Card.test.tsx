@@ -2,10 +2,10 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { describe, expect, test } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
-import CardPopUp from './CardPopUp';
+import Card from './Card';
 
-describe('CardPopUp Component', () => {
-  test('If CardPopUp is rendered!', () => {
+describe('Card Component', () => {
+  test('If Card is rendered!', () => {
     const card = {
       name: 'Футболка Nike',
       releaseDate: '2021-01-02',
@@ -30,7 +30,7 @@ describe('CardPopUp Component', () => {
     };
     render(
       <BrowserRouter>
-        <CardPopUp card={card} />
+        <Card card={card} />
       </BrowserRouter>
     );
     expect(screen.getByText(card.name)).toBeInTheDocument();
