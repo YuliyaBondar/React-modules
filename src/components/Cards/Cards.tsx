@@ -11,7 +11,7 @@ function Cards({ cards }: Props) {
   return (
     <div className="cards__container">
       {cards?.map((card) => (
-        <Card card={card} key={card.name} />
+        <Card card={card} key={card.id} />
       ))}
     </div>
   );

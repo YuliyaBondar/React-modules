@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { useForm } from 'react-hook-form';
 import Cards from '../../components/Cards/Cards';
 import { IData, IResults } from '../../utils/interfaces';
@@ -13,29 +13,34 @@ function CardsOnMain() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState<IData | null>(null);
   const [filteredResults, setFilteredResults] = useState(() => {
-    return JSON.parse(localStorage.getItem('filteredResults') as string) || '[]';
+    return JSON.parse(localStorage.getItem('filteredResults') as string) || [];
+  });
+  const [page, setPage] = useState(() => {
+    return JSON.parse(localStorage.getItem('page') as string) || '1';
   });
   const { register } = useForm();
 
   useEffect(() => {
-    localStorage.setItem('searchValue', JSON.stringify(searchValue));
     localStorage.setItem('filteredResults', JSON.stringify(filteredResults));
-    fetch('https://rickandmortyapi.com/api/character')
+    localStorage.setItem('page', JSON.stringify(page));
+    fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
       .then((res) => res.json())
       .then(
         (result) => {
           setIsLoaded(true);
           setItems(result);
+          console.log(result);
         },
         (error) => {
           setIsLoaded(true);
           setError(error);
         }
       );
-  }, [searchValue, filteredResults]);
+  }, [page, filteredResults]);
 
-  const searchItems = (searchInput: string) => {
-    setSearchValue(searchInput);
+  const searchItems = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    localStorage.setItem('searchValue', JSON.stringify(searchValue));
     if (searchValue !== '') {
       const filteredData = items?.results.filter((item) => {
         return item.name?.toLowerCase().includes(searchValue.toLowerCase());
@@ -57,19 +62,40 @@ function CardsOnMain() {
   } else {
     return (
       <>
-        <form id="search-form" role="search">
+        <form id="search-form" role="search" onSubmit={searchItems}>
           <input
             aria-label="Search"
             placeholder="Search"
             type="search"
             {...register('searchValue', {
-              onChange: (e) => searchItems(e.target.value),
+              onChange: (e) => setSearchValue(e.target.value),
               value: searchValue,
             })}
             className="form__input_text search-input"
           />
+          <input type="submit" value="Submit" className="form__input_submit" />
         </form>
-        <Cards cards={searchValue.length > 1 ? filteredResults : items?.results} />
+        <div className="page__control">
+          <button
+            className="button"
+            disabled={page == 1}
+            onClick={() => {
+              setPage((prevState: string) => +prevState - 1);
+            }}
+          >
+            prev
+          </button>
+          <span>{page}</span>
+          <button
+            className="button"
+            onClick={() => {
+              setPage((prevState: string) => +prevState + 1);
+            }}
+          >
+            next
+          </button>
+        </div>
+        <Cards cards={filteredResults.length ? filteredResults : items?.results} />
       </>
     );
   }
