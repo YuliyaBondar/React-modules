@@ -7,6 +7,8 @@ import fetch from 'cross-fetch';
 import './CardsOnMain.css';
 
 function CardsOnMain() {
+  const { register } = useForm();
+
   const [searchValue, setSearchValue] = useState(() => {
     return JSON.parse(localStorage.getItem('searchValue') as string) || '';
   });
@@ -16,10 +18,10 @@ function CardsOnMain() {
   const [filteredResults, setFilteredResults] = useState(() => {
     return JSON.parse(localStorage.getItem('filteredResults') as string) || [];
   });
-  const { register } = useForm();
 
   useEffect(() => {
     localStorage.setItem('filteredResults', JSON.stringify(filteredResults));
+
     fetch(`https://rickandmortyapi.com/api/character`)
       .then((res) => res.json())
       .then(
@@ -36,14 +38,16 @@ function CardsOnMain() {
 
   const searchItems = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     localStorage.setItem('searchValue', JSON.stringify(searchValue));
+
     if (searchValue !== '') {
       const filteredData = items?.results.filter((item) => {
         return item.name?.toLowerCase().includes(searchValue.toLowerCase());
       }) as IResults[];
       setFilteredResults(filteredData);
     } else {
-      setFilteredResults(items?.results as IResults[]);
+      setFilteredResults([]);
     }
   };
 
@@ -71,7 +75,13 @@ function CardsOnMain() {
           />
           <input type="submit" value="Submit" className="form__input_submit" />
         </form>
-        <Cards cards={filteredResults.length ? filteredResults : items?.results} />
+        {filteredResults.length || items?.results ? (
+          <>
+            <Cards cards={filteredResults.length ? filteredResults : items?.results} />
+          </>
+        ) : (
+          <h2>Sorry, no matches found!</h2>
+        )}
       </>
     );
   }
