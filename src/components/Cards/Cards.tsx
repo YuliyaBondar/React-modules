@@ -10,8 +10,8 @@ type Props = {
 function Cards({ cards }: Props) {
   return (
     <div className="cards__container">
-      {cards?.map((card) => (
-        <Card card={card} key={card.id} />
+      {cards?.map((card, index) => (
+        <Card card={card} key={card.id ? index + card.id : index} />
       ))}
     </div>
   );

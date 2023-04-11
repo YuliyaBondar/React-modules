@@ -2,6 +2,7 @@ import { useState, useEffect, FormEvent } from 'react';
 import { useForm } from 'react-hook-form';
 import Cards from '../../components/Cards/Cards';
 import { IData, IResults } from '../../utils/interfaces';
+import fetch from 'cross-fetch';
 
 import './CardsOnMain.css';
 
@@ -51,7 +52,7 @@ function CardsOnMain() {
   } else if (!isLoaded) {
     return (
       <div className="loader-container">
-        <div className="spinner"></div>
+        <div className="spinner" data-testid="spinner"></div>
       </div>
     );
   } else {
