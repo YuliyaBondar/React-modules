@@ -15,15 +15,11 @@ function CardsOnMain() {
   const [filteredResults, setFilteredResults] = useState(() => {
     return JSON.parse(localStorage.getItem('filteredResults') as string) || [];
   });
-  const [page, setPage] = useState(() => {
-    return JSON.parse(localStorage.getItem('page') as string) || '1';
-  });
   const { register } = useForm();
 
   useEffect(() => {
     localStorage.setItem('filteredResults', JSON.stringify(filteredResults));
-    localStorage.setItem('page', JSON.stringify(page));
-    fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
+    fetch(`https://rickandmortyapi.com/api/character`)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -36,7 +32,7 @@ function CardsOnMain() {
           setError(error);
         }
       );
-  }, [page, filteredResults]);
+  }, [filteredResults]);
 
   const searchItems = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -75,26 +71,6 @@ function CardsOnMain() {
           />
           <input type="submit" value="Submit" className="form__input_submit" />
         </form>
-        <div className="page__control">
-          <button
-            className="button"
-            disabled={page == 1}
-            onClick={() => {
-              setPage((prevState: string) => +prevState - 1);
-            }}
-          >
-            prev
-          </button>
-          <span>{page}</span>
-          <button
-            className="button"
-            onClick={() => {
-              setPage((prevState: string) => +prevState + 1);
-            }}
-          >
-            next
-          </button>
-        </div>
         <Cards cards={filteredResults.length ? filteredResults : items?.results} />
       </>
     );
