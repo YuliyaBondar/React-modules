@@ -9,6 +9,6 @@
 .cards__item_characteristics {
   padding: 0 15px;
 
-  font-family: 'Lucida Sans' sans-serif;
   font-size: 15px;
+  text-align: left;
 }
