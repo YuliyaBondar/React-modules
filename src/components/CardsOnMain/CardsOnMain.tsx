@@ -1,8 +1,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { useForm } from 'react-hook-form';
-import Cards from '../../components/Cards/Cards';
-import { IData, IResults } from '../../utils/interfaces';
 import fetch from 'cross-fetch';
+import Cards from '../../components/Cards/Cards';
 
 import './CardsOnMain.css';
 
@@ -14,41 +13,42 @@ function CardsOnMain() {
   });
   const [error, setError] = useState<Error | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState<IData | null>(null);
   const [filteredResults, setFilteredResults] = useState(() => {
     return JSON.parse(localStorage.getItem('filteredResults') as string) || [];
   });
+  const [page, setPage] = useState(() => {
+    return JSON.parse(localStorage.getItem('page') as string) || 1;
+  });
 
-  useEffect(() => {
-    localStorage.setItem('filteredResults', JSON.stringify(filteredResults));
-
-    fetch(`https://rickandmortyapi.com/api/character`)
+  const fetchData = () => {
+    return fetch(`https://rickandmortyapi.com/api/character/?page=${page}&name=${searchValue}`)
       .then((res) => res.json())
       .then(
         (result) => {
           setIsLoaded(true);
-          setItems(result);
+          setFilteredResults(result?.results);
+          return result;
         },
         (error) => {
           setIsLoaded(true);
           setError(error);
         }
       );
-  }, [filteredResults]);
+  };
+
+  useEffect(() => {
+    localStorage.setItem('page', JSON.stringify(page));
+    fetchData();
+  }, [page]);
 
   const searchItems = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     localStorage.setItem('searchValue', JSON.stringify(searchValue));
-
-    if (searchValue !== '') {
-      const filteredData = items?.results.filter((item) => {
-        return item.name?.toLowerCase().includes(searchValue.toLowerCase());
-      }) as IResults[];
-      setFilteredResults(filteredData);
-    } else {
-      setFilteredResults([]);
-    }
+    fetchData().then((result) => {
+      setFilteredResults(result?.results);
+      localStorage.setItem('filteredResults', JSON.stringify(result?.results));
+    });
   };
 
   if (error) {
@@ -74,8 +74,35 @@ function CardsOnMain() {
             className="form__input_text search-input"
           />
           <input type="submit" value="Submit" className="form__input_submit" />
+          {filteredResults && (
+            <div className="page__control">
+              <button
+                className="button"
+                disabled={page == 1}
+                onClick={() => {
+                  setPage((prevState: number) => prevState - 1);
+                }}
+              >
+                prev
+              </button>
+              <span>{page}</span>
+              <button
+                className="button"
+                disabled={filteredResults.length < 20}
+                onClick={() => {
+                  setPage((prevState: number) => prevState + 1);
+                }}
+              >
+                next
+              </button>
+            </div>
+          )}
+          {filteredResults ? (
+            <Cards cards={filteredResults || []} />
+          ) : (
+            <h2>Sorry, no matches found!</h2>
+          )}
         </form>
-        <Cards cards={filteredResults.length ? filteredResults : items?.results} />
       </>
     );
   }
