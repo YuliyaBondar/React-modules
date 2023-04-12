@@ -18,15 +18,11 @@ function CardsOnMain() {
   const [filteredResults, setFilteredResults] = useState(() => {
     return JSON.parse(localStorage.getItem('filteredResults') as string) || [];
   });
-  const [page, setPage] = useState(() => {
-    return JSON.parse(localStorage.getItem('page') as string) || 1;
-  });
 
   useEffect(() => {
     localStorage.setItem('filteredResults', JSON.stringify(filteredResults));
-    localStorage.setItem('page', JSON.stringify(page));
 
-    fetch(`https://rickandmortyapi.com/api/character/?page=${page}&name=${searchValue}`)
+    fetch(`https://rickandmortyapi.com/api/character`)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -38,7 +34,7 @@ function CardsOnMain() {
           setError(error);
         }
       );
-  }, [filteredResults, page]);
+  }, [filteredResults]);
 
   const searchItems = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -79,33 +75,7 @@ function CardsOnMain() {
           />
           <input type="submit" value="Submit" className="form__input_submit" />
         </form>
-        {filteredResults.length || items?.results ? (
-          <>
-            <div className="page__control">
-              <button
-                className="button"
-                disabled={page == 1}
-                onClick={() => {
-                  setPage((prevState: number) => prevState - 1);
-                }}
-              >
-                prev
-              </button>
-              <span>{page}</span>
-              <button
-                className="button"
-                onClick={() => {
-                  setPage((prevState: number) => prevState + 1);
-                }}
-              >
-                next
-              </button>
-            </div>
-            <Cards cards={filteredResults.length ? filteredResults : items?.results} />
-          </>
-        ) : (
-          <h2>Sorry, no matches found!</h2>
-        )}
+        <Cards cards={filteredResults.length ? filteredResults : items?.results} />
       </>
     );
   }
