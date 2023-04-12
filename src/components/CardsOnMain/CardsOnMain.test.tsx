@@ -11,6 +11,7 @@ describe('CardsOnMain Component', () => {
   afterEach(() => {
     fetchMock.restore();
   });
+
   test('If CardsOnMain is rendered!', () => {
     render(
       <BrowserRouter>
@@ -18,5 +19,15 @@ describe('CardsOnMain Component', () => {
       </BrowserRouter>
     );
     expect(screen.getByTestId('spinner')).toBeInTheDocument();
+
+    fetchMock.mock('https://rickandmortyapi.com/api/character', {
+      status: 200,
+    });
+  });
+
+  test('Verify if cards are retrieved on button click - error page not found', async () => {
+    fetchMock.mock('https://rickandmortyapi.com/api/character', {
+      status: 404,
+    });
   });
 });
