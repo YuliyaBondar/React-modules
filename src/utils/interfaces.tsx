@@ -25,7 +25,7 @@ export interface IResults {
   created?: string;
   releaseDate?: string;
   category?: string;
-  isFormelyUsed?: boolean;
+  isAgreed?: boolean;
   material?: string;
 }
 

@@ -4,10 +4,10 @@ import { useForm } from 'react-hook-form';
 type Props = {
   labelName: string;
   valueName: string;
-  setProductNameInput: Dispatch<string>;
+  setReleaseDateInput: Dispatch<string>;
 };
 
-function TextInput({ labelName, valueName, setProductNameInput }: Props) {
+function DateInput({ labelName, valueName, setReleaseDateInput }: Props) {
   const { register } = useForm();
 
   return (
@@ -15,15 +15,15 @@ function TextInput({ labelName, valueName, setProductNameInput }: Props) {
       <span>{labelName}:</span>
       <input
         {...register(valueName, {
-          onChange: (e) => setProductNameInput(e.target.value),
+          onChange: (e) => setReleaseDateInput(e.target.value),
         })}
-        type="text"
-        className="form__input_text"
-        data-testid="input_text"
+        type="date"
+        className="form__input_date"
+        data-testid="input_date"
         required={true}
       />
     </label>
   );
 }
 
-export default TextInput;
+export default DateInput;

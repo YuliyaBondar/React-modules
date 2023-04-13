@@ -1,16 +1,15 @@
 import { RefObject } from 'react';
 
 type Props = {
-  labelName: string;
   value: string;
   inputName: RefObject<HTMLInputElement>;
 };
 
-function RadioInput({ labelName, value, inputName }: Props) {
+function RadioInput({ value, inputName }: Props) {
   return (
     <label>
-      <span>{labelName}:</span>
-      <input type="radio" value={value} ref={inputName} required />
+      <span>{value}:</span>
+      <input type="radio" name="switcher" value={value} ref={inputName} required />
     </label>
   );
 }

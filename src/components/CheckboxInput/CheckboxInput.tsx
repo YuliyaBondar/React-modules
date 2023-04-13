@@ -4,26 +4,26 @@ import { useForm } from 'react-hook-form';
 type Props = {
   labelName: string;
   valueName: string;
-  setProductNameInput: Dispatch<string>;
+  setAgreed: Dispatch<boolean>;
 };
 
-function TextInput({ labelName, valueName, setProductNameInput }: Props) {
+function CheckboxInput({ labelName, valueName, setAgreed }: Props) {
   const { register } = useForm();
 
   return (
-    <label>
+    <label className={valueName}>
       <span>{labelName}:</span>
       <input
         {...register(valueName, {
-          onChange: (e) => setProductNameInput(e.target.value),
+          onChange: (e) => setAgreed(e.target.checked),
         })}
-        type="text"
-        className="form__input_text"
-        data-testid="input_text"
+        type="checkbox"
+        className="h-mr30"
+        data-testid="input_checkbox"
         required={true}
       />
     </label>
   );
 }
 
-export default TextInput;
+export default CheckboxInput;

@@ -38,12 +38,6 @@ function CardContent({ card }: Props) {
             <span className="f-bold">Category:</span> {card.category}
           </p>
         )}
-        {card.isFormelyUsed && (
-          <p>
-            <span className="f-bold">Is formely used:</span>{' '}
-            {card.isFormelyUsed == true ? 'yes' : 'no'}
-          </p>
-        )}
         {card.material && (
           <p>
             <span className="f-bold">Material:</span> {card.material}
