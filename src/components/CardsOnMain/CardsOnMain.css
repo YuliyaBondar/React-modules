@@ -4,26 +4,6 @@ form {
   text-align: center;
 }
 
-.search-input__container {
-  margin-bottom: 30px;
-}
-
-.search-input {
-  margin: 0 10px 10px 0;
-  padding: 10px 25px 10px 45px;
-
-  background-image: url(https://raw.githubusercontent.com/YuliyaBondar/christmas-data/main/assets/svg/search.svg);
-  background-position: 5% 50%;
-  background-repeat: no-repeat;
-  background-size: 20px;
-}
-
-@media (max-width: 361px) {
-  .search-input {
-    width: 100%;
-  }
-}
-
 .loader-container {
   position: fixed;
   top: 0;

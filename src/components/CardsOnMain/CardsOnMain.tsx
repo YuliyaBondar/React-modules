@@ -1,14 +1,11 @@
 import { useState, useEffect, FormEvent } from 'react';
-import { useForm } from 'react-hook-form';
-import fetch from 'cross-fetch';
 import Cards from '../../components/Cards/Cards';
-import SubmitButton from '../SubmitButton/SubmitButton';
+import SearchBar from '../SearchBar/SearchBar';
+import { fetchData } from '../../utils/supportConstans';
 
 import './CardsOnMain.css';
 
 function CardsOnMain() {
-  const { register } = useForm();
-
   const [searchValue, setSearchValue] = useState(() => {
     return JSON.parse(localStorage.getItem('searchValue') as string) || '';
   });
@@ -21,32 +18,16 @@ function CardsOnMain() {
     return JSON.parse(localStorage.getItem('page') as string) || 1;
   });
 
-  const fetchData = () => {
-    return fetch(`https://rickandmortyapi.com/api/character/?page=${page}&name=${searchValue}`)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setFilteredResults(result?.results);
-          return result;
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  };
-
   useEffect(() => {
     localStorage.setItem('page', JSON.stringify(page));
-    fetchData();
+    fetchData({ page, searchValue, setIsLoaded, setFilteredResults, setError });
   }, [page]);
 
   const searchItems = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     localStorage.setItem('searchValue', JSON.stringify(searchValue));
-    fetchData().then((result) => {
+    fetchData({ page, searchValue, setIsLoaded, setFilteredResults, setError }).then((result) => {
       setFilteredResults(result?.results);
       localStorage.setItem('filteredResults', JSON.stringify(result?.results));
     });
@@ -64,19 +45,7 @@ function CardsOnMain() {
     return (
       <>
         <form id="search-form" role="search" onSubmit={searchItems}>
-          <div className="search-input__container">
-            <input
-              aria-label="Search"
-              placeholder="Search"
-              type="search"
-              {...register('searchValue', {
-                onChange: (e) => setSearchValue(e.target.value),
-                value: searchValue,
-              })}
-              className="form__input_text search-input"
-            />
-            <SubmitButton />
-          </div>
+          <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
           {filteredResults && (
             <div className="page__control">
               <button
