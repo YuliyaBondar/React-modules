@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Cards from '../../components/Cards/Cards';
+import RadioInput from '../../components/RadioInput/RadioInput';
+import FileInput from '../../components/FileInput/FileInput';
+import SubmitButton from '../../components/SubmitButton/SubmitButton';
 
 import './form.css';
 
@@ -95,33 +98,11 @@ function Form() {
               data-testid="input_checkbox"
             />
           </label>
-          <label>
-            <span>Хлопок:</span>
-            <input
-              type="radio"
-              name="switcher"
-              value="Хлопок"
-              ref={materialCottonRadioInput}
-              required
-            />
-          </label>
-          <label>
-            <span>Деним:</span>
-            <input type="radio" name="switcher" value="Деним" ref={materialDenimRadioInput} />
-          </label>
+          <RadioInput labelName={'Хлопок'} value={'Хлопок'} inputName={materialCottonRadioInput} />
+          <RadioInput labelName={'Деним'} value={'Деним'} inputName={materialDenimRadioInput} />
         </div>
-        <label>
-          <span>Upload file:</span>
-          <input
-            type="file"
-            accept="image/*"
-            ref={imageFileInput}
-            className="form__input_file"
-            data-testid="input_file"
-            required
-          />
-        </label>
-        <input type="submit" value="Submit" className="form__input_submit" />
+        <FileInput labelName={'Upload file'} accept={'image/*'} inputName={imageFileInput} />
+        <SubmitButton />
       </form>
       <Cards cards={createdCards} />
     </div>

@@ -2,6 +2,7 @@ import { useState, useEffect, FormEvent } from 'react';
 import { useForm } from 'react-hook-form';
 import fetch from 'cross-fetch';
 import Cards from '../../components/Cards/Cards';
+import SubmitButton from '../SubmitButton/SubmitButton';
 
 import './CardsOnMain.css';
 
@@ -74,7 +75,7 @@ function CardsOnMain() {
               })}
               className="form__input_text search-input"
             />
-            <input type="submit" value="Submit" className="form__input_submit" />
+            <SubmitButton />
           </div>
           {filteredResults && (
             <div className="page__control">
