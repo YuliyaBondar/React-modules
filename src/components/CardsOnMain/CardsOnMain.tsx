@@ -63,17 +63,19 @@ function CardsOnMain() {
     return (
       <>
         <form id="search-form" role="search" onSubmit={searchItems}>
-          <input
-            aria-label="Search"
-            placeholder="Search"
-            type="search"
-            {...register('searchValue', {
-              onChange: (e) => setSearchValue(e.target.value),
-              value: searchValue,
-            })}
-            className="form__input_text search-input"
-          />
-          <input type="submit" value="Submit" className="form__input_submit" />
+          <div className="search-input__container">
+            <input
+              aria-label="Search"
+              placeholder="Search"
+              type="search"
+              {...register('searchValue', {
+                onChange: (e) => setSearchValue(e.target.value),
+                value: searchValue,
+              })}
+              className="form__input_text search-input"
+            />
+            <input type="submit" value="Submit" className="form__input_submit" />
+          </div>
           {filteredResults && (
             <div className="page__control">
               <button
