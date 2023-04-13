@@ -1,7 +1,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import Cards from '../../components/Cards/Cards';
 import SearchBar from '../SearchBar/SearchBar';
-import { fetchData } from '../../utils/supportConstans';
+import { fetchData } from '../../utils/supportConstants';
 
 import './CardsOnMain.css';
 
@@ -21,6 +21,7 @@ function CardsOnMain() {
   useEffect(() => {
     localStorage.setItem('page', JSON.stringify(page));
     fetchData({ page, searchValue, setIsLoaded, setFilteredResults, setError });
+    console.log(setSearchValue);
   }, [page]);
 
   const searchItems = (e: FormEvent<HTMLFormElement>) => {
