@@ -36,11 +36,3 @@ form {
     transform: rotate(360deg);
   }
 }
-
-.page__control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}

@@ -1,6 +1,7 @@
 import { Dispatch } from 'react';
 import { useForm } from 'react-hook-form';
 import SubmitButton from '../SubmitButton/SubmitButton';
+
 import './SearchBar.css';
 
 type Props = {

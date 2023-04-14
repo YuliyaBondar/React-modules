@@ -1,6 +1,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import Cards from '../../components/Cards/Cards';
 import SearchBar from '../SearchBar/SearchBar';
+import Pagination from '../Pagination/Pagination';
 import { fetchData } from '../../utils/supportConstants';
 
 import './CardsOnMain.css';
@@ -48,27 +49,7 @@ function CardsOnMain() {
         <form id="search-form" role="search" onSubmit={searchItems}>
           <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
           {filteredResults && (
-            <div className="page__control">
-              <button
-                className="button"
-                disabled={page == 1}
-                onClick={() => {
-                  setPage((prevState: number) => prevState - 1);
-                }}
-              >
-                prev
-              </button>
-              <span>{page}</span>
-              <button
-                className="button"
-                disabled={filteredResults.length < 20}
-                onClick={() => {
-                  setPage((prevState: number) => prevState + 1);
-                }}
-              >
-                next
-              </button>
-            </div>
+            <Pagination page={page} setPage={setPage} filteredResults={filteredResults} />
           )}
           {filteredResults ? (
             <Cards cards={filteredResults || []} />
