@@ -1,32 +1,52 @@
-import { IData } from '../../utils/interfaces';
+import 'reactjs-popup/dist/index.css';
+import useModal from '../../hooks/useModal';
+import Modal from '../Modal/Modal';
+import { IResults } from '../../utils/interfaces';
+import CardContent from '../CardContent/CardContent';
 
 import './Card.css';
 
 type Props = {
-  card: IData;
+  card: IResults;
 };
 
 function Card({ card }: Props) {
+  const { isOpen, toggle } = useModal();
   return (
-    <div className="cards__item">
-      <img src={card.image} alt={card.name} className="cards__item_img" />
-      <div className="cards__item_characteristics">
-        <p>{card.name}</p>
-        <p>
-          <span className="f-bold">Release date:</span> {card.releaseDate}
-        </p>
-        <p>
-          <span className="f-bold">Category:</span> {card.category}
-        </p>
-        <p>
-          <span className="f-bold">Is formely used:</span>{' '}
-          {card.isFormelyUsed == true ? 'yes' : 'no'}
-        </p>
-        <p>
-          <span className="f-bold">Material:</span> {card.material}
-        </p>
+    <>
+      <div className="cards__item" onClick={toggle}>
+        <CardContent card={card} />
       </div>
-    </div>
+      <Modal isOpen={isOpen} toggle={toggle}>
+        <div className="modal">
+          <div className="modal-content">
+            <CardContent card={card} />
+            <div className="cards__item_characteristics">
+              {card.type && (
+                <p>
+                  <span className="f-bold">Type:</span> {card.type}
+                </p>
+              )}
+              {card.gender && (
+                <p>
+                  <span className="f-bold">Gender:</span> {card.gender}
+                </p>
+              )}
+              {card.origin && (
+                <p>
+                  <span className="f-bold">Origin:</span> {card.origin.name}
+                </p>
+              )}
+              {card.created && (
+                <p>
+                  <span className="f-bold">Created:</span> {card.created}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      </Modal>
+    </>
   );
 }
 

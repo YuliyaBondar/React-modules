@@ -3,9 +3,9 @@ import '@testing-library/jest-dom';
 import { describe, expect, test } from 'vitest';
 import SearchBar from './SearchBar';
 
-describe('Search Component', () => {
+describe('SearchBar Component', () => {
   test('If SearchBar is rendered!', () => {
-    render(<SearchBar />);
+    render(<SearchBar searchValue={''} />);
     expect(screen.getByPlaceholderText(/Search/i)).toBeInTheDocument();
   });
 });

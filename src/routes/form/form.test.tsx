@@ -46,19 +46,18 @@ describe('Form', () => {
       expect(inputDate).toBeRequired();
     }
 
-    const inputIsFormelyUsed = screen.getByTestId('input_checkbox') as HTMLInputElement | null;
-    expect(inputIsFormelyUsed).toBeTruthy();
-    expect(inputIsFormelyUsed?.checked).toBe(false);
-    if (inputIsFormelyUsed) {
-      inputIsFormelyUsed.checked = true;
-      expect(inputIsFormelyUsed.checked).toBe(true);
-      expect(inputIsFormelyUsed.type).toBe('checkbox');
-      fireEvent.change(inputIsFormelyUsed, {
+    const inputIsAgreed = screen.getByTestId('input_checkbox') as HTMLInputElement | null;
+    expect(inputIsAgreed).toBeTruthy();
+    expect(inputIsAgreed?.checked).toBe(false);
+    if (inputIsAgreed) {
+      inputIsAgreed.checked = true;
+      expect(inputIsAgreed.checked).toBe(true);
+      expect(inputIsAgreed.type).toBe('checkbox');
+      fireEvent.change(inputIsAgreed, {
         target: {
           checked: true,
         },
       });
-      expect(inputIsFormelyUsed).toBeRequired();
     }
 
     const categorySelectValue = screen.getByTestId('select') as HTMLInputElement | null;

@@ -1,27 +1,31 @@
-import { useState, useEffect } from 'react';
+import { Dispatch } from 'react';
+import { useForm } from 'react-hook-form';
+import SubmitButton from '../SubmitButton/SubmitButton';
 
 import './SearchBar.css';
 
-function SearchBar() {
-  const [searchValue, setSearchValue] = useState(() => {
-    return JSON.parse(localStorage.getItem('searchValue') as string) || '';
-  });
+type Props = {
+  searchValue: string;
+  setSearchValue?: Dispatch<string>;
+};
 
-  useEffect(() => {
-    localStorage.setItem('searchValue', JSON.stringify(searchValue));
-  }, [searchValue]);
+function SearchBar({ searchValue, setSearchValue }: Props) {
+  const { register } = useForm();
 
   return (
-    <form id="search-form" role="search">
+    <div className="search-input__container">
       <input
         aria-label="Search"
         placeholder="Search"
         type="search"
-        value={searchValue}
-        onInput={(e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
+        {...register('searchValue', {
+          onChange: (e) => setSearchValue?.(e.target.value),
+          value: searchValue,
+        })}
         className="form__input_text search-input"
       />
-    </form>
+      <SubmitButton />
+    </div>
   );
 }
 
