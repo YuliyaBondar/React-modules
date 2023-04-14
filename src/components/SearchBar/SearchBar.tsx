@@ -6,7 +6,7 @@ import './SearchBar.css';
 
 type Props = {
   searchValue: string;
-  setSearchValue: Dispatch<string>;
+  setSearchValue?: Dispatch<string>;
 };
 
 function SearchBar({ searchValue, setSearchValue }: Props) {
@@ -19,7 +19,7 @@ function SearchBar({ searchValue, setSearchValue }: Props) {
         placeholder="Search"
         type="search"
         {...register('searchValue', {
-          onChange: (e) => setSearchValue(e.target.value),
+          onChange: (e) => setSearchValue?.(e.target.value),
           value: searchValue,
         })}
         className="form__input_text search-input"

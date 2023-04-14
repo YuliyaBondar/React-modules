@@ -4,7 +4,7 @@ import './Pagination.css';
 
 type Props = {
   page: number;
-  setPage: Dispatch<(prevState: number) => number>;
+  setPage?: Dispatch<(prevState: number) => number>;
   filteredResults: [];
 };
 
@@ -15,7 +15,7 @@ function Pagination({ page, setPage, filteredResults }: Props) {
         className="button"
         disabled={page == 1}
         onClick={() => {
-          setPage((prevState) => prevState - 1);
+          setPage?.((prevState) => prevState - 1);
         }}
       >
         prev
@@ -25,7 +25,7 @@ function Pagination({ page, setPage, filteredResults }: Props) {
         className="button"
         disabled={filteredResults.length < 20}
         onClick={() => {
-          setPage((prevState) => prevState + 1);
+          setPage?.((prevState) => prevState + 1);
         }}
       >
         next
