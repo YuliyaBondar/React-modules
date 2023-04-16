@@ -1,4 +1,6 @@
 import { useState, useEffect, FormEvent } from 'react';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../app/store';
 import Cards from '../../components/Cards/Cards';
 import SearchBar from '../SearchBar/SearchBar';
 import Pagination from '../Pagination/Pagination';
@@ -7,9 +9,7 @@ import { fetchData } from '../../utils/supportConstants';
 import './CardsOnMain.css';
 
 function CardsOnMain() {
-  const [searchValue, setSearchValue] = useState(() => {
-    return JSON.parse(localStorage.getItem('searchValue') as string) || '';
-  });
+  const searchValue = useSelector((state: RootState) => state.searchValue.value);
   const [error, setError] = useState<Error | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [filteredResults, setFilteredResults] = useState(() => {
@@ -22,13 +22,11 @@ function CardsOnMain() {
   useEffect(() => {
     localStorage.setItem('page', JSON.stringify(page));
     fetchData({ page, searchValue, setIsLoaded, setFilteredResults, setError });
-    console.log(setSearchValue);
   }, [page]);
 
   const searchItems = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    localStorage.setItem('searchValue', JSON.stringify(searchValue));
     fetchData({ page, searchValue, setIsLoaded, setFilteredResults, setError }).then((result) => {
       setFilteredResults(result?.results);
       localStorage.setItem('filteredResults', JSON.stringify(result?.results));
@@ -47,7 +45,7 @@ function CardsOnMain() {
     return (
       <>
         <form id="search-form" role="search" onSubmit={searchItems}>
-          <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+          <SearchBar />
           {filteredResults && (
             <Pagination page={page} setPage={setPage} filteredResults={filteredResults} />
           )}

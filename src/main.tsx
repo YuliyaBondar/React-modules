@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
 import Root from './routes/root/root';
 import ErrorPage from './routes/error-page/error-page';
 import AboutPage from './routes/about-page/about-page';
@@ -36,7 +38,9 @@ try {
   if (root) {
     ReactDOM.createRoot(root).render(
       <ErrorBoundary FallbackComponent={FallbackComponent}>
-        <AppWrapper />
+        <Provider store={store}>
+          <AppWrapper />
+        </Provider>
       </ErrorBoundary>
     );
   } else {
