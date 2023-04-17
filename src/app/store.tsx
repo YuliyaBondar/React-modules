@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import searchValueReducer from '../features/searchValue/searchValueSlice';
+import cardsCreatorReducer from '../features/cardsCreator/cardsCreatorSlice';
 
 export const store = configureStore({
   reducer: {
     searchValue: searchValueReducer,
+    cardsCreator: cardsCreatorReducer,
   },
 });
 
