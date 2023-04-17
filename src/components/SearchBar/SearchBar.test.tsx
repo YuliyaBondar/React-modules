@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 
 describe('SearchBar Component', () => {
   test('If SearchBar is rendered!', () => {
-    render(<SearchBar searchValue={''} />);
+    render(<SearchBar />);
     expect(screen.getByPlaceholderText(/Search/i)).toBeInTheDocument();
   });
 });
