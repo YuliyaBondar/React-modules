@@ -63,6 +63,7 @@ describe('Form', () => {
         },
       });
     }
+    expect(inputIsAgreed).not.toHaveAttribute('checked', '');
 
     const categorySelectValue = screen.getByTestId('select') as HTMLInputElement | null;
     expect(categorySelectValue).toBeTruthy();

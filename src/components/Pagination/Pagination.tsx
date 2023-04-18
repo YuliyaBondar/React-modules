@@ -1,7 +1,7 @@
 import { Dispatch } from 'react';
+import { IResults } from '../../utils/interfaces';
 
 import './Pagination.css';
-import { IResults } from '../../utils/interfaces';
 
 type Props = {
   page: number;
@@ -18,6 +18,7 @@ function Pagination({ page, setPage, filteredResults }: Props) {
         onClick={() => {
           setPage?.((prevState) => prevState - 1);
         }}
+        data-testid="pagePrev"
       >
         prev
       </button>
