@@ -2,15 +2,15 @@ import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../../app/store';
-import { handleSearchChange } from '../../features/searchValue/searchValueSlice';
 import SubmitButton from '../SubmitButton/SubmitButton';
+import { handleSearchChange } from '../../features/appReducer/appReducerSlice';
 
 import './SearchBar.css';
 
 function SearchBar() {
   const { register } = useForm();
   const searchValueInput = useRef<HTMLInputElement | null>(null);
-  const searchValue = useSelector((state: RootState) => state.searchValue.value);
+  const searchValue = useSelector((state: RootState) => state.store.searchValue);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -1,15 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import searchValueReducer from '../features/searchValue/searchValueSlice';
-import cardsCreatorReducer from '../features/cardsCreator/cardsCreatorSlice';
-import charactersCreatorReducer from '../features/charactersCreator/charactersCreator';
+import appReducer from '../features/appReducer/appReducerSlice';
 import { setupListeners } from '@reduxjs/toolkit/query';
+import { rickandmortyApi } from '../services/rickandmorty';
 
 export const store = configureStore({
-  reducer: {
-    searchValue: searchValueReducer,
-    cardsCreator: cardsCreatorReducer,
-    charactersCreator: charactersCreatorReducer,
-  },
+  reducer: appReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(rickandmortyApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

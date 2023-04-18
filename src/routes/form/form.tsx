@@ -10,7 +10,7 @@ import CheckboxInput from '../../components/CheckboxInput/CheckboxInput';
 import RadioInput from '../../components/RadioInput/RadioInput';
 import FileInput from '../../components/FileInput/FileInput';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
-import { cardsCreator } from '../../features/cardsCreator/cardsCreatorSlice';
+import { cardsCreator } from '../../features/appReducer/appReducerSlice';
 
 import './form.css';
 
@@ -18,7 +18,7 @@ function Form() {
   const { handleSubmit } = useForm();
 
   const dispatch = useDispatch();
-  const createdCards = useSelector((state: RootState) => state.cardsCreator.value);
+  const createdCards = useSelector((state: RootState) => state.store.cards);
 
   const imageFileInput = useRef<HTMLInputElement>(null);
   const materialCottonRadioInput = useRef<HTMLInputElement>(null);

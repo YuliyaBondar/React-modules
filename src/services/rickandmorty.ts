@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IResults } from '../utils/interfaces';
+import { IData } from '../utils/interfaces';
 
 type Props = {
   searchValue: string;
@@ -10,7 +10,7 @@ export const rickandmortyApi = createApi({
   reducerPath: 'rickandmortyApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://rickandmortyapi.com/api/' }),
   endpoints: (builder) => ({
-    getCharacters: builder.query<IResults[], Props>({
+    getCharacters: builder.query<IData, Props>({
       query: (args) => ({
         url: `character/`,
         params: {
