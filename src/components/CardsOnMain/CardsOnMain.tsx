@@ -23,7 +23,7 @@ function CardsOnMain() {
     {
       data ? dispatch(charactersCreator(data.results)) : dispatch(charactersCreator([]));
     }
-  }, [page, data, error, isLoading]);
+  }, [page, data]);
 
   const searchItems = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
