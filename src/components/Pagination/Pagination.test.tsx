@@ -5,7 +5,7 @@ import Pagination from './Pagination';
 import userEvent from '@testing-library/user-event';
 
 describe('Pagination Component', () => {
-  test('If SearchBar is rendered!', async () => {
+  test('If SearchBar is rendered!', () => {
     render(<Pagination page={1} filteredResults={[]} />);
     userEvent.click(screen.getByTestId('pagePrev'));
     userEvent.click(screen.getByText('next'));
