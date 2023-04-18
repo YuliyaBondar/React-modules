@@ -1,15 +1,19 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { describe, expect, test } from 'vitest';
-import Form from './form';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from '../../app/store';
+import Form from './form';
 
 describe('Form', () => {
   test('If Form is rendered!', () => {
     render(
-      <BrowserRouter>
-        <Form />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Form />
+        </BrowserRouter>
+      </Provider>
     );
     expect(screen.getByTestId('form')).toBeInTheDocument();
     expect(screen.getByDisplayValue('Submit')).toBeInTheDocument();
@@ -59,6 +63,7 @@ describe('Form', () => {
         },
       });
     }
+    expect(inputIsAgreed).not.toHaveAttribute('checked', '');
 
     const categorySelectValue = screen.getByTestId('select') as HTMLInputElement | null;
     expect(categorySelectValue).toBeTruthy();

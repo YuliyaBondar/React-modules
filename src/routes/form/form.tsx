@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useSelector, useDispatch } from 'react-redux';
+import type { RootState } from '../../app/store';
 import Cards from '../../components/Cards/Cards';
 import TextInput from '../../components/TextInput/TextInput';
 import DateInput from '../../components/DateInput/DateInput';
@@ -8,11 +10,15 @@ import CheckboxInput from '../../components/CheckboxInput/CheckboxInput';
 import RadioInput from '../../components/RadioInput/RadioInput';
 import FileInput from '../../components/FileInput/FileInput';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
+import { cardsCreator } from '../../features/appReducer/appReducerSlice';
 
 import './form.css';
 
 function Form() {
   const { handleSubmit } = useForm();
+
+  const dispatch = useDispatch();
+  const createdCards = useSelector((state: RootState) => state.store.cards);
 
   const imageFileInput = useRef<HTMLInputElement>(null);
   const materialCottonRadioInput = useRef<HTMLInputElement>(null);
@@ -21,15 +27,11 @@ function Form() {
   const [releaseDateInput, setReleaseDateInput] = useState('');
   const [categorySelectValue, setCategorySelectValue] = useState('Футболки');
   const [isAgreed, setAgreed] = useState(false);
-  const [createdCards, setCreatedCards] = useState(() => {
-    return JSON.parse(localStorage.getItem('createdCards') || '[]');
-  });
 
   const onSubmit = handleSubmit((_, e) => {
     alert('The data has been saved.');
-    setCreatedCards([
-      ...createdCards,
-      {
+    dispatch(
+      cardsCreator({
         name: productNameInput,
         releaseDate: releaseDateInput,
         image: URL.createObjectURL(imageFileInput.current!.files![0]),
@@ -38,14 +40,10 @@ function Form() {
         material: materialCottonRadioInput.current?.checked
           ? materialCottonRadioInput.current?.value
           : materialDenimRadioInput.current?.value,
-      },
-    ]);
+      })
+    );
     e?.target.reset();
   });
-
-  useEffect(() => {
-    localStorage.setItem('createdCards', JSON.stringify(createdCards));
-  }, [createdCards]);
 
   return (
     <div className="form-page">

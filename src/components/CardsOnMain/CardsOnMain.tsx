@@ -1,43 +1,37 @@
 import { useState, useEffect, FormEvent } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '../../app/store';
 import Cards from '../../components/Cards/Cards';
 import SearchBar from '../SearchBar/SearchBar';
 import Pagination from '../Pagination/Pagination';
-import { fetchData } from '../../utils/supportConstants';
+import { useGetCharactersQuery } from '../../services/rickandmorty';
+import { charactersCreator } from '../../features/appReducer/appReducerSlice';
 
 import './CardsOnMain.css';
 
 function CardsOnMain() {
-  const [searchValue, setSearchValue] = useState(() => {
-    return JSON.parse(localStorage.getItem('searchValue') as string) || '';
-  });
-  const [error, setError] = useState<Error | null>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [filteredResults, setFilteredResults] = useState(() => {
-    return JSON.parse(localStorage.getItem('filteredResults') as string) || [];
-  });
+  const dispatch = useDispatch();
+  const searchValue = useSelector((state: RootState) => state.store.searchValue);
+  const characters = useSelector((state: RootState) => state.store.characters);
   const [page, setPage] = useState(() => {
     return JSON.parse(localStorage.getItem('page') as string) || 1;
   });
+  const { data, error, isLoading } = useGetCharactersQuery({ searchValue, page });
 
   useEffect(() => {
     localStorage.setItem('page', JSON.stringify(page));
-    fetchData({ page, searchValue, setIsLoaded, setFilteredResults, setError });
-    console.log(setSearchValue);
-  }, [page]);
+    {
+      data ? dispatch(charactersCreator(data.results)) : dispatch(charactersCreator([]));
+    }
+  }, [page, data]);
 
   const searchItems = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    localStorage.setItem('searchValue', JSON.stringify(searchValue));
-    fetchData({ page, searchValue, setIsLoaded, setFilteredResults, setError }).then((result) => {
-      setFilteredResults(result?.results);
-      localStorage.setItem('filteredResults', JSON.stringify(result?.results));
-    });
   };
 
   if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
+    return <div>Oh no, there was an error</div>;
+  } else if (isLoading) {
     return (
       <div className="loader-container">
         <div className="spinner" data-testid="spinner"></div>
@@ -47,15 +41,9 @@ function CardsOnMain() {
     return (
       <>
         <form id="search-form" role="search" onSubmit={searchItems}>
-          <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-          {filteredResults && (
-            <Pagination page={page} setPage={setPage} filteredResults={filteredResults} />
-          )}
-          {filteredResults ? (
-            <Cards cards={filteredResults || []} />
-          ) : (
-            <h2>Sorry, no matches found!</h2>
-          )}
+          <SearchBar />
+          {characters && <Pagination page={page} setPage={setPage} filteredResults={characters} />}
+          {characters ? <Cards cards={characters || []} /> : <h2>Sorry, no matches found!</h2>}
         </form>
       </>
     );

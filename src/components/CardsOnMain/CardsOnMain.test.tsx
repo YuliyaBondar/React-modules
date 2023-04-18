@@ -3,6 +3,8 @@ import '@testing-library/jest-dom';
 import { describe, expect, test, vi } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 import fetchMock from 'fetch-mock';
+import { Provider } from 'react-redux';
+import { store } from '../../app/store';
 import CardsOnMain from './CardsOnMain';
 
 global.fetch = vi.fn();
@@ -14,9 +16,11 @@ describe('CardsOnMain Component', () => {
 
   test('If CardsOnMain is rendered!', () => {
     render(
-      <BrowserRouter>
-        <CardsOnMain />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <CardsOnMain />
+        </BrowserRouter>
+      </Provider>
     );
     expect(screen.getByTestId('spinner')).toBeInTheDocument();
 
