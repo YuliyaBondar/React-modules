@@ -1,4 +1,66 @@
 {
+  "D:\\React2023Q1\\React-modules\\src\\app\\store.tsx": {
+    "path": "D:\\React2023Q1\\React-modules\\src\\app\\store.tsx",
+    "all": false,
+    "statementMap": {
+      "0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 50 } },
+      "1": { "start": { "line": 2, "column": 0 }, "end": { "line": 2, "column": 74 } },
+      "2": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 77 } },
+      "3": { "start": { "line": 4, "column": 0 }, "end": { "line": 4, "column": 87 } },
+      "4": { "start": { "line": 5, "column": 0 }, "end": { "line": 5, "column": 56 } },
+      "5": { "start": { "line": 6, "column": 0 }, "end": { "line": 6, "column": 0 } },
+      "6": { "start": { "line": 7, "column": 0 }, "end": { "line": 7, "column": 37 } },
+      "7": { "start": { "line": 8, "column": 0 }, "end": { "line": 8, "column": 12 } },
+      "8": { "start": { "line": 9, "column": 0 }, "end": { "line": 9, "column": 36 } },
+      "9": { "start": { "line": 10, "column": 0 }, "end": { "line": 10, "column": 38 } },
+      "10": { "start": { "line": 11, "column": 0 }, "end": { "line": 11, "column": 48 } },
+      "11": { "start": { "line": 12, "column": 0 }, "end": { "line": 12, "column": 4 } },
+      "12": { "start": { "line": 13, "column": 0 }, "end": { "line": 13, "column": 3 } },
+      "13": { "start": { "line": 14, "column": 0 }, "end": { "line": 14, "column": 0 } },
+      "14": { "start": { "line": 15, "column": 0 }, "end": { "line": 15, "column": 58 } },
+      "15": { "start": { "line": 16, "column": 0 }, "end": { "line": 16, "column": 48 } },
+      "16": { "start": { "line": 17, "column": 0 }, "end": { "line": 17, "column": 0 } },
+      "17": { "start": { "line": 18, "column": 0 }, "end": { "line": 18, "column": 31 } }
+    },
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "16": 1,
+      "17": 1
+    },
+    "branchMap": {
+      "0": {
+        "type": "branch",
+        "line": 13,
+        "loc": { "start": { "line": 13, "column": 1 }, "end": { "line": 13, "column": 3 } },
+        "locations": [{ "start": { "line": 13, "column": 1 }, "end": { "line": 13, "column": 3 } }]
+      }
+    },
+    "b": { "0": [4] },
+    "fnMap": {
+      "0": {
+        "name": "get",
+        "decl": { "start": { "line": 13, "column": 1 }, "end": { "line": 13, "column": 3 } },
+        "loc": { "start": { "line": 13, "column": 1 }, "end": { "line": 13, "column": 3 } },
+        "line": 13
+      }
+    },
+    "f": { "0": 4 }
+  },
   "D:\\React2023Q1\\React-modules\\src\\components\\Card\\Card.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\Card\\Card.tsx",
     "all": false,
@@ -350,15 +412,15 @@
       "6": 1,
       "7": 1,
       "8": 1,
-      "9": 1,
-      "10": 1,
-      "11": 1,
-      "12": 1,
+      "9": 5,
+      "10": 5,
+      "11": 5,
+      "12": 5,
       "13": 2,
-      "14": 1,
-      "15": 1,
-      "16": 1,
-      "17": 1,
+      "14": 5,
+      "15": 5,
+      "16": 5,
+      "17": 5,
       "18": 1,
       "19": 1
     },
@@ -386,7 +448,7 @@
         ]
       }
     },
-    "b": { "0": [1], "1": [2], "2": [0] },
+    "b": { "0": [5], "1": [2], "2": [0] },
     "fnMap": {
       "0": {
         "name": "Cards",
@@ -395,7 +457,7 @@
         "line": 10
       }
     },
-    "f": { "0": 1 }
+    "f": { "0": 5 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\CardsOnMain\\CardsOnMain.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\CardsOnMain\\CardsOnMain.tsx",
@@ -476,23 +538,23 @@
       "7": 1,
       "8": 1,
       "9": 1,
-      "10": 10,
-      "11": 10,
-      "12": 10,
-      "13": 10,
-      "14": 10,
-      "15": 0,
-      "16": 10,
-      "17": 10,
-      "18": 0,
-      "19": 10,
-      "20": 10,
-      "21": 10,
-      "22": 0,
-      "23": 0,
-      "24": 10,
-      "25": 10,
-      "26": 10,
+      "10": 2,
+      "11": 2,
+      "12": 2,
+      "13": 2,
+      "14": 2,
+      "15": 2,
+      "16": 2,
+      "17": 2,
+      "18": 2,
+      "19": 2,
+      "20": 2,
+      "21": 2,
+      "22": 2,
+      "23": 2,
+      "24": 2,
+      "25": 2,
+      "26": 2,
       "27": 0,
       "28": 0,
       "29": 0,
@@ -500,16 +562,16 @@
       "31": 0,
       "32": 0,
       "33": 0,
-      "34": 10,
-      "35": 10,
+      "34": 2,
+      "35": 2,
       "36": 0,
-      "37": 0,
-      "38": 0,
-      "39": 0,
-      "40": 0,
-      "41": 0,
-      "42": 0,
-      "43": 0,
+      "37": 2,
+      "38": 2,
+      "39": 2,
+      "40": 2,
+      "41": 2,
+      "42": 2,
+      "43": 2,
       "44": 0,
       "45": 0,
       "46": 0,
@@ -526,7 +588,7 @@
       "57": 0,
       "58": 0,
       "59": 0,
-      "60": 10,
+      "60": 2,
       "61": 1,
       "62": 1
     },
@@ -540,11 +602,45 @@
       "1": {
         "type": "branch",
         "line": 36,
-        "loc": { "start": { "line": 36, "column": 13 }, "end": { "line": 60, "column": 3 } },
-        "locations": [{ "start": { "line": 36, "column": 13 }, "end": { "line": 60, "column": 3 } }]
+        "loc": { "start": { "line": 36, "column": 13 }, "end": { "line": 38, "column": 13 } },
+        "locations": [
+          { "start": { "line": 36, "column": 13 }, "end": { "line": 38, "column": 13 } }
+        ]
+      },
+      "2": {
+        "type": "branch",
+        "line": 44,
+        "loc": { "start": { "line": 44, "column": 2 }, "end": { "line": 60, "column": 3 } },
+        "locations": [{ "start": { "line": 44, "column": 2 }, "end": { "line": 60, "column": 3 } }]
+      },
+      "3": {
+        "type": "branch",
+        "line": 12,
+        "loc": { "start": { "line": 12, "column": 34 }, "end": { "line": 12, "column": 79 } },
+        "locations": [
+          { "start": { "line": 12, "column": 34 }, "end": { "line": 12, "column": 79 } }
+        ]
+      },
+      "4": {
+        "type": "branch",
+        "line": 15,
+        "loc": { "start": { "line": 15, "column": 57 }, "end": { "line": 17, "column": 3 } },
+        "locations": [{ "start": { "line": 15, "column": 57 }, "end": { "line": 17, "column": 3 } }]
+      },
+      "5": {
+        "type": "branch",
+        "line": 18,
+        "loc": { "start": { "line": 18, "column": 35 }, "end": { "line": 20, "column": 3 } },
+        "locations": [{ "start": { "line": 18, "column": 35 }, "end": { "line": 20, "column": 3 } }]
+      },
+      "6": {
+        "type": "branch",
+        "line": 22,
+        "loc": { "start": { "line": 22, "column": 12 }, "end": { "line": 25, "column": 5 } },
+        "locations": [{ "start": { "line": 22, "column": 12 }, "end": { "line": 25, "column": 5 } }]
       }
     },
-    "b": { "0": [10], "1": [0] },
+    "b": { "0": [2], "1": [0], "2": [0], "3": [2], "4": [2], "5": [2], "6": [2] },
     "fnMap": {
       "0": {
         "name": "CardsOnMain",
@@ -559,7 +655,7 @@
         "line": 27
       }
     },
-    "f": { "0": 10, "1": 0 }
+    "f": { "0": 2, "1": 0 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\CheckboxInput\\CheckboxInput.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\CheckboxInput\\CheckboxInput.tsx",
@@ -605,38 +701,51 @@
       "6": 1,
       "7": 1,
       "8": 1,
-      "9": 0,
-      "10": 0,
-      "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
-      "23": 0,
-      "24": 0,
-      "25": 0,
-      "26": 0,
+      "9": 4,
+      "10": 4,
+      "11": 4,
+      "12": 4,
+      "13": 4,
+      "14": 4,
+      "15": 4,
+      "16": 4,
+      "17": 4,
+      "18": 4,
+      "19": 4,
+      "20": 4,
+      "21": 4,
+      "22": 4,
+      "23": 4,
+      "24": 4,
+      "25": 4,
+      "26": 4,
       "27": 1,
       "28": 1
     },
-    "branchMap": {},
-    "b": {},
+    "branchMap": {
+      "0": {
+        "type": "branch",
+        "line": 10,
+        "loc": { "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } },
+        "locations": [{ "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } }]
+      }
+    },
+    "b": { "0": [4] },
     "fnMap": {
       "0": {
         "name": "CheckboxInput",
         "decl": { "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } },
         "loc": { "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } },
         "line": 10
+      },
+      "1": {
+        "name": "onChange",
+        "decl": { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 55 } },
+        "loc": { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 55 } },
+        "line": 18
       }
     },
-    "f": { "0": 0 }
+    "f": { "0": 4, "1": 0 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\DateInput\\DateInput.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\DateInput\\DateInput.tsx",
@@ -682,38 +791,59 @@
       "6": 1,
       "7": 1,
       "8": 1,
-      "9": 0,
-      "10": 0,
-      "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
-      "23": 0,
-      "24": 0,
-      "25": 0,
-      "26": 0,
+      "9": 4,
+      "10": 4,
+      "11": 4,
+      "12": 4,
+      "13": 4,
+      "14": 4,
+      "15": 4,
+      "16": 4,
+      "17": 4,
+      "18": 4,
+      "19": 4,
+      "20": 4,
+      "21": 4,
+      "22": 4,
+      "23": 4,
+      "24": 4,
+      "25": 4,
+      "26": 4,
       "27": 1,
       "28": 1
     },
-    "branchMap": {},
-    "b": {},
+    "branchMap": {
+      "0": {
+        "type": "branch",
+        "line": 10,
+        "loc": { "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } },
+        "locations": [{ "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } }]
+      },
+      "1": {
+        "type": "branch",
+        "line": 18,
+        "loc": { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 63 } },
+        "locations": [
+          { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 63 } }
+        ]
+      }
+    },
+    "b": { "0": [4], "1": [1] },
     "fnMap": {
       "0": {
         "name": "DateInput",
         "decl": { "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } },
         "loc": { "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } },
         "line": 10
+      },
+      "1": {
+        "name": "onChange",
+        "decl": { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 63 } },
+        "loc": { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 63 } },
+        "line": 18
       }
     },
-    "f": { "0": 0 }
+    "f": { "0": 4, "1": 1 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\FileInput\\FileInput.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\FileInput\\FileInput.tsx",
@@ -754,26 +884,33 @@
       "5": 1,
       "6": 1,
       "7": 1,
-      "8": 0,
-      "9": 0,
-      "10": 0,
-      "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
+      "8": 4,
+      "9": 4,
+      "10": 4,
+      "11": 4,
+      "12": 4,
+      "13": 4,
+      "14": 4,
+      "15": 4,
+      "16": 4,
+      "17": 4,
+      "18": 4,
+      "19": 4,
+      "20": 4,
+      "21": 4,
+      "22": 4,
       "23": 1,
       "24": 1
     },
-    "branchMap": {},
-    "b": {},
+    "branchMap": {
+      "0": {
+        "type": "branch",
+        "line": 9,
+        "loc": { "start": { "line": 9, "column": 0 }, "end": { "line": 23, "column": 1 } },
+        "locations": [{ "start": { "line": 9, "column": 0 }, "end": { "line": 23, "column": 1 } }]
+      }
+    },
+    "b": { "0": [4] },
     "fnMap": {
       "0": {
         "name": "FileInput",
@@ -782,7 +919,7 @@
         "line": 9
       }
     },
-    "f": { "0": 0 }
+    "f": { "0": 4 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\Header\\Header.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\Header\\Header.tsx",
@@ -1236,19 +1373,26 @@
       "4": 1,
       "5": 1,
       "6": 1,
-      "7": 0,
-      "8": 0,
-      "9": 0,
-      "10": 0,
-      "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 0,
+      "7": 8,
+      "8": 8,
+      "9": 8,
+      "10": 8,
+      "11": 8,
+      "12": 8,
+      "13": 8,
+      "14": 8,
       "15": 1,
       "16": 1
     },
-    "branchMap": {},
-    "b": {},
+    "branchMap": {
+      "0": {
+        "type": "branch",
+        "line": 8,
+        "loc": { "start": { "line": 8, "column": 0 }, "end": { "line": 15, "column": 1 } },
+        "locations": [{ "start": { "line": 8, "column": 0 }, "end": { "line": 15, "column": 1 } }]
+      }
+    },
+    "b": { "0": [8] },
     "fnMap": {
       "0": {
         "name": "RadioInput",
@@ -1257,7 +1401,7 @@
         "line": 8
       }
     },
-    "f": { "0": 0 }
+    "f": { "0": 8 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\SearchBar\\SearchBar.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\SearchBar\\SearchBar.tsx",
@@ -1312,33 +1456,33 @@
       "6": 1,
       "7": 1,
       "8": 1,
-      "9": 5,
-      "10": 5,
-      "11": 5,
-      "12": 5,
-      "13": 5,
-      "14": 5,
-      "15": 5,
-      "16": 0,
-      "17": 5,
-      "18": 5,
-      "19": 5,
-      "20": 5,
-      "21": 5,
-      "22": 5,
-      "23": 5,
-      "24": 5,
-      "25": 5,
-      "26": 5,
-      "27": 5,
-      "28": 5,
-      "29": 5,
-      "30": 5,
-      "31": 5,
-      "32": 5,
-      "33": 5,
-      "34": 5,
-      "35": 5,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "16": 1,
+      "17": 1,
+      "18": 1,
+      "19": 1,
+      "20": 1,
+      "21": 1,
+      "22": 1,
+      "23": 1,
+      "24": 1,
+      "25": 1,
+      "26": 1,
+      "27": 1,
+      "28": 1,
+      "29": 1,
+      "30": 1,
+      "31": 1,
+      "32": 1,
+      "33": 1,
+      "34": 1,
+      "35": 1,
       "36": 1,
       "37": 1
     },
@@ -1348,9 +1492,23 @@
         "line": 10,
         "loc": { "start": { "line": 10, "column": 0 }, "end": { "line": 36, "column": 1 } },
         "locations": [{ "start": { "line": 10, "column": 0 }, "end": { "line": 36, "column": 1 } }]
+      },
+      "1": {
+        "type": "branch",
+        "line": 13,
+        "loc": { "start": { "line": 13, "column": 34 }, "end": { "line": 13, "column": 79 } },
+        "locations": [
+          { "start": { "line": 13, "column": 34 }, "end": { "line": 13, "column": 79 } }
+        ]
+      },
+      "2": {
+        "type": "branch",
+        "line": 16,
+        "loc": { "start": { "line": 16, "column": 12 }, "end": { "line": 18, "column": 5 } },
+        "locations": [{ "start": { "line": 16, "column": 12 }, "end": { "line": 18, "column": 5 } }]
       }
     },
-    "b": { "0": [5] },
+    "b": { "0": [1], "1": [1], "2": [1] },
     "fnMap": {
       "0": {
         "name": "SearchBar",
@@ -1365,7 +1523,7 @@
         "line": 27
       }
     },
-    "f": { "0": 5, "1": 0 }
+    "f": { "0": 1, "1": 0 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\Select\\Select.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\Select\\Select.tsx",
@@ -1419,44 +1577,73 @@
       "7": 1,
       "8": 1,
       "9": 1,
-      "10": 0,
-      "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
-      "23": 0,
-      "24": 0,
-      "25": 0,
-      "26": 0,
-      "27": 0,
-      "28": 0,
-      "29": 0,
-      "30": 0,
-      "31": 0,
-      "32": 0,
-      "33": 0,
+      "10": 4,
+      "11": 4,
+      "12": 4,
+      "13": 4,
+      "14": 4,
+      "15": 4,
+      "16": 4,
+      "17": 4,
+      "18": 4,
+      "19": 4,
+      "20": 4,
+      "21": 4,
+      "22": 4,
+      "23": 4,
+      "24": 4,
+      "25": 4,
+      "26": 12,
+      "27": 12,
+      "28": 12,
+      "29": 4,
+      "30": 4,
+      "31": 4,
+      "32": 4,
+      "33": 4,
       "34": 1,
       "35": 1
     },
-    "branchMap": {},
-    "b": {},
+    "branchMap": {
+      "0": {
+        "type": "branch",
+        "line": 11,
+        "loc": { "start": { "line": 11, "column": 0 }, "end": { "line": 34, "column": 1 } },
+        "locations": [{ "start": { "line": 11, "column": 0 }, "end": { "line": 34, "column": 1 } }]
+      },
+      "1": {
+        "type": "branch",
+        "line": 19,
+        "loc": { "start": { "line": 19, "column": 20 }, "end": { "line": 19, "column": 66 } },
+        "locations": [
+          { "start": { "line": 19, "column": 20 }, "end": { "line": 19, "column": 66 } }
+        ]
+      },
+      "2": {
+        "type": "branch",
+        "line": 26,
+        "loc": { "start": { "line": 26, "column": 22 }, "end": { "line": 29, "column": 21 } },
+        "locations": [
+          { "start": { "line": 26, "column": 22 }, "end": { "line": 29, "column": 21 } }
+        ]
+      }
+    },
+    "b": { "0": [4], "1": [1], "2": [12] },
     "fnMap": {
       "0": {
         "name": "Select",
         "decl": { "start": { "line": 11, "column": 0 }, "end": { "line": 34, "column": 1 } },
         "loc": { "start": { "line": 11, "column": 0 }, "end": { "line": 34, "column": 1 } },
         "line": 11
+      },
+      "1": {
+        "name": "onChange",
+        "decl": { "start": { "line": 19, "column": 20 }, "end": { "line": 19, "column": 66 } },
+        "loc": { "start": { "line": 19, "column": 20 }, "end": { "line": 19, "column": 66 } },
+        "line": 19
       }
     },
-    "f": { "0": 0 }
+    "f": { "0": 4, "1": 1 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\SubmitButton\\SubmitButton.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\SubmitButton\\SubmitButton.tsx",
@@ -1468,9 +1655,16 @@
       "3": { "start": { "line": 4, "column": 0 }, "end": { "line": 4, "column": 0 } },
       "4": { "start": { "line": 5, "column": 0 }, "end": { "line": 5, "column": 28 } }
     },
-    "s": { "0": 0, "1": 0, "2": 0, "3": 1, "4": 1 },
-    "branchMap": {},
-    "b": {},
+    "s": { "0": 5, "1": 5, "2": 5, "3": 1, "4": 1 },
+    "branchMap": {
+      "0": {
+        "type": "branch",
+        "line": 1,
+        "loc": { "start": { "line": 1, "column": 0 }, "end": { "line": 3, "column": 1 } },
+        "locations": [{ "start": { "line": 1, "column": 0 }, "end": { "line": 3, "column": 1 } }]
+      }
+    },
+    "b": { "0": [5] },
     "fnMap": {
       "0": {
         "name": "SubmitButton",
@@ -1479,7 +1673,7 @@
         "line": 1
       }
     },
-    "f": { "0": 0 }
+    "f": { "0": 5 }
   },
   "D:\\React2023Q1\\React-modules\\src\\components\\TextInput\\TextInput.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\components\\TextInput\\TextInput.tsx",
@@ -1525,38 +1719,59 @@
       "6": 1,
       "7": 1,
       "8": 1,
-      "9": 0,
-      "10": 0,
-      "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
-      "23": 0,
-      "24": 0,
-      "25": 0,
-      "26": 0,
+      "9": 4,
+      "10": 4,
+      "11": 4,
+      "12": 4,
+      "13": 4,
+      "14": 4,
+      "15": 4,
+      "16": 4,
+      "17": 4,
+      "18": 4,
+      "19": 4,
+      "20": 4,
+      "21": 4,
+      "22": 4,
+      "23": 4,
+      "24": 4,
+      "25": 4,
+      "26": 4,
       "27": 1,
       "28": 1
     },
-    "branchMap": {},
-    "b": {},
+    "branchMap": {
+      "0": {
+        "type": "branch",
+        "line": 10,
+        "loc": { "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } },
+        "locations": [{ "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } }]
+      },
+      "1": {
+        "type": "branch",
+        "line": 18,
+        "loc": { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 63 } },
+        "locations": [
+          { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 63 } }
+        ]
+      }
+    },
+    "b": { "0": [4], "1": [1] },
     "fnMap": {
       "0": {
         "name": "TextInput",
         "decl": { "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } },
         "loc": { "start": { "line": 10, "column": 0 }, "end": { "line": 27, "column": 1 } },
         "line": 10
+      },
+      "1": {
+        "name": "onChange",
+        "decl": { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 63 } },
+        "loc": { "start": { "line": 18, "column": 20 }, "end": { "line": 18, "column": 63 } },
+        "line": 18
       }
     },
-    "f": { "0": 0 }
+    "f": { "0": 4, "1": 1 }
   },
   "D:\\React2023Q1\\React-modules\\src\\features\\cardsCreator\\cardsCreatorSlice.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\features\\cardsCreator\\cardsCreatorSlice.tsx",
@@ -1634,6 +1849,87 @@
         "name": "get",
         "decl": { "start": { "line": 23, "column": 50 }, "end": { "line": 23, "column": 58 } },
         "loc": { "start": { "line": 23, "column": 50 }, "end": { "line": 23, "column": 58 } },
+        "line": 23
+      }
+    },
+    "f": { "0": 0, "1": 0, "2": 0 }
+  },
+  "D:\\React2023Q1\\React-modules\\src\\features\\charactersCreator\\charactersCreator.tsx": {
+    "path": "D:\\React2023Q1\\React-modules\\src\\features\\charactersCreator\\charactersCreator.tsx",
+    "all": false,
+    "statementMap": {
+      "0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 47 } },
+      "1": { "start": { "line": 2, "column": 0 }, "end": { "line": 2, "column": 54 } },
+      "2": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 50 } },
+      "3": { "start": { "line": 4, "column": 0 }, "end": { "line": 4, "column": 0 } },
+      "4": { "start": { "line": 5, "column": 0 }, "end": { "line": 5, "column": 41 } },
+      "5": { "start": { "line": 6, "column": 0 }, "end": { "line": 6, "column": 20 } },
+      "6": { "start": { "line": 7, "column": 0 }, "end": { "line": 7, "column": 1 } },
+      "7": { "start": { "line": 8, "column": 0 }, "end": { "line": 8, "column": 0 } },
+      "8": { "start": { "line": 9, "column": 0 }, "end": { "line": 9, "column": 46 } },
+      "9": { "start": { "line": 10, "column": 0 }, "end": { "line": 10, "column": 12 } },
+      "10": { "start": { "line": 11, "column": 0 }, "end": { "line": 11, "column": 2 } },
+      "11": { "start": { "line": 12, "column": 0 }, "end": { "line": 12, "column": 0 } },
+      "12": { "start": { "line": 13, "column": 0 }, "end": { "line": 13, "column": 51 } },
+      "13": { "start": { "line": 14, "column": 0 }, "end": { "line": 14, "column": 28 } },
+      "14": { "start": { "line": 15, "column": 0 }, "end": { "line": 15, "column": 15 } },
+      "15": { "start": { "line": 16, "column": 0 }, "end": { "line": 16, "column": 13 } },
+      "16": { "start": { "line": 17, "column": 0 }, "end": { "line": 17, "column": 70 } },
+      "17": { "start": { "line": 18, "column": 0 }, "end": { "line": 18, "column": 40 } },
+      "18": { "start": { "line": 19, "column": 0 }, "end": { "line": 19, "column": 6 } },
+      "19": { "start": { "line": 20, "column": 0 }, "end": { "line": 20, "column": 4 } },
+      "20": { "start": { "line": 21, "column": 0 }, "end": { "line": 21, "column": 3 } },
+      "21": { "start": { "line": 22, "column": 0 }, "end": { "line": 22, "column": 0 } },
+      "22": { "start": { "line": 23, "column": 0 }, "end": { "line": 23, "column": 68 } },
+      "23": { "start": { "line": 24, "column": 0 }, "end": { "line": 24, "column": 0 } },
+      "24": { "start": { "line": 25, "column": 0 }, "end": { "line": 25, "column": 46 } }
+    },
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "16": 1,
+      "17": 0,
+      "18": 0,
+      "19": 1,
+      "20": 1,
+      "21": 1,
+      "22": 1,
+      "23": 1,
+      "24": 1
+    },
+    "branchMap": {},
+    "b": {},
+    "fnMap": {
+      "0": {
+        "name": "charactersCreator",
+        "decl": { "start": { "line": 17, "column": 23 }, "end": { "line": 19, "column": 6 } },
+        "loc": { "start": { "line": 17, "column": 23 }, "end": { "line": 19, "column": 6 } },
+        "line": 17
+      },
+      "1": {
+        "name": "get",
+        "decl": { "start": { "line": 21, "column": 1 }, "end": { "line": 21, "column": 3 } },
+        "loc": { "start": { "line": 21, "column": 1 }, "end": { "line": 21, "column": 3 } },
+        "line": 21
+      },
+      "2": {
+        "name": "get",
+        "decl": { "start": { "line": 23, "column": 60 }, "end": { "line": 23, "column": 68 } },
+        "loc": { "start": { "line": 23, "column": 60 }, "end": { "line": 23, "column": 68 } },
         "line": 23
       }
     },
@@ -2007,21 +2303,21 @@
       "13": 1,
       "14": 1,
       "15": 1,
-      "16": 5,
-      "17": 5,
-      "18": 5,
-      "19": 5,
-      "20": 5,
-      "21": 5,
-      "22": 5,
-      "23": 5,
-      "24": 5,
-      "25": 5,
-      "26": 5,
-      "27": 5,
-      "28": 5,
-      "29": 5,
-      "30": 5,
+      "16": 4,
+      "17": 4,
+      "18": 4,
+      "19": 4,
+      "20": 4,
+      "21": 4,
+      "22": 4,
+      "23": 4,
+      "24": 4,
+      "25": 4,
+      "26": 4,
+      "27": 4,
+      "28": 4,
+      "29": 4,
+      "30": 4,
       "31": 0,
       "32": 0,
       "33": 0,
@@ -2036,43 +2332,43 @@
       "42": 0,
       "43": 0,
       "44": 0,
-      "45": 5,
-      "46": 5,
-      "47": 5,
-      "48": 5,
-      "49": 5,
-      "50": 5,
-      "51": 5,
-      "52": 5,
-      "53": 5,
-      "54": 5,
-      "55": 5,
-      "56": 5,
-      "57": 5,
-      "58": 5,
-      "59": 5,
-      "60": 5,
-      "61": 5,
-      "62": 5,
-      "63": 5,
-      "64": 5,
-      "65": 5,
-      "66": 5,
-      "67": 5,
-      "68": 5,
-      "69": 5,
-      "70": 5,
-      "71": 5,
-      "72": 5,
-      "73": 5,
-      "74": 5,
-      "75": 5,
-      "76": 5,
-      "77": 5,
-      "78": 5,
-      "79": 5,
-      "80": 5,
-      "81": 5,
+      "45": 4,
+      "46": 4,
+      "47": 4,
+      "48": 4,
+      "49": 4,
+      "50": 4,
+      "51": 4,
+      "52": 4,
+      "53": 4,
+      "54": 4,
+      "55": 4,
+      "56": 4,
+      "57": 4,
+      "58": 4,
+      "59": 4,
+      "60": 4,
+      "61": 4,
+      "62": 4,
+      "63": 4,
+      "64": 4,
+      "65": 4,
+      "66": 4,
+      "67": 4,
+      "68": 4,
+      "69": 4,
+      "70": 4,
+      "71": 4,
+      "72": 4,
+      "73": 4,
+      "74": 4,
+      "75": 4,
+      "76": 4,
+      "77": 4,
+      "78": 4,
+      "79": 4,
+      "80": 4,
+      "81": 4,
       "82": 1,
       "83": 1
     },
@@ -2082,9 +2378,17 @@
         "line": 17,
         "loc": { "start": { "line": 17, "column": 0 }, "end": { "line": 82, "column": 1 } },
         "locations": [{ "start": { "line": 17, "column": 0 }, "end": { "line": 82, "column": 1 } }]
+      },
+      "1": {
+        "type": "branch",
+        "line": 21,
+        "loc": { "start": { "line": 21, "column": 35 }, "end": { "line": 21, "column": 81 } },
+        "locations": [
+          { "start": { "line": 21, "column": 35 }, "end": { "line": 21, "column": 81 } }
+        ]
       }
     },
-    "b": { "0": [5] },
+    "b": { "0": [4], "1": [4] },
     "fnMap": {
       "0": {
         "name": "Form",
@@ -2093,7 +2397,7 @@
         "line": 17
       }
     },
-    "f": { "0": 5 }
+    "f": { "0": 4 }
   },
   "D:\\React2023Q1\\React-modules\\src\\routes\\root\\root.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\routes\\root\\root.tsx",
@@ -2118,13 +2422,13 @@
       "1": 1,
       "2": 1,
       "3": 1,
-      "4": 3,
-      "5": 3,
-      "6": 3,
-      "7": 3,
-      "8": 3,
-      "9": 3,
-      "10": 3,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
       "11": 1,
       "12": 1
     },
@@ -2136,7 +2440,7 @@
         "locations": [{ "start": { "line": 5, "column": 0 }, "end": { "line": 11, "column": 1 } }]
       }
     },
-    "b": { "0": [3] },
+    "b": { "0": [1] },
     "fnMap": {
       "0": {
         "name": "Root",
@@ -2145,7 +2449,7 @@
         "line": 5
       }
     },
-    "f": { "0": 3 }
+    "f": { "0": 1 }
   },
   "D:\\React2023Q1\\React-modules\\src\\utils\\supportConstants.tsx": {
     "path": "D:\\React2023Q1\\React-modules\\src\\utils\\supportConstants.tsx",
@@ -2197,29 +2501,42 @@
       "9": 1,
       "10": 1,
       "11": 1,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
+      "12": 2,
+      "13": 2,
+      "14": 2,
+      "15": 2,
+      "16": 2,
+      "17": 2,
+      "18": 2,
+      "19": 2,
+      "20": 2,
+      "21": 2,
       "22": 0,
       "23": 0,
       "24": 0,
       "25": 0,
-      "26": 0,
+      "26": 2,
       "27": 0,
       "28": 0,
       "29": 0,
-      "30": 0,
-      "31": 0
+      "30": 2,
+      "31": 2
     },
-    "branchMap": {},
-    "b": {},
+    "branchMap": {
+      "0": {
+        "type": "branch",
+        "line": 12,
+        "loc": { "start": { "line": 12, "column": 25 }, "end": { "line": 32, "column": 2 } },
+        "locations": [{ "start": { "line": 12, "column": 25 }, "end": { "line": 32, "column": 2 } }]
+      },
+      "1": {
+        "type": "branch",
+        "line": 32,
+        "loc": { "start": { "line": 32, "column": 0 }, "end": { "line": 32, "column": 2 } },
+        "locations": [{ "start": { "line": 32, "column": 0 }, "end": { "line": 32, "column": 2 } }]
+      }
+    },
+    "b": { "0": [2], "1": [2] },
     "fnMap": {
       "0": {
         "name": "fetchData",
@@ -2234,6 +2551,6 @@
         "line": 32
       }
     },
-    "f": { "0": 0, "1": 0 }
+    "f": { "0": 2, "1": 2 }
   }
 }
