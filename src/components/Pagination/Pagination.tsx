@@ -1,11 +1,12 @@
 import { Dispatch } from 'react';
 
 import './Pagination.css';
+import { IResults } from '../../utils/interfaces';
 
 type Props = {
   page: number;
   setPage?: Dispatch<(prevState: number) => number>;
-  filteredResults: [];
+  filteredResults: IResults[];
 };
 
 function Pagination({ page, setPage, filteredResults }: Props) {

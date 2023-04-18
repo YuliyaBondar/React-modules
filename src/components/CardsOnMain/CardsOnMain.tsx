@@ -20,11 +20,8 @@ function CardsOnMain() {
 
   useEffect(() => {
     localStorage.setItem('page', JSON.stringify(page));
-    if (!error && data && !isLoading) {
-      dispatch(charactersCreator(data.results));
-      return;
-    } else {
-      dispatch(charactersCreator([]));
+    {
+      data ? dispatch(charactersCreator(data.results)) : dispatch(charactersCreator([]));
     }
   }, [page, data, error, isLoading]);
 
