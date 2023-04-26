@@ -18,7 +18,6 @@ function CheckboxInput({ labelName, valueName, setAgreed }: Props) {
           onChange: (e) => setAgreed(e.target.checked),
         })}
         type="checkbox"
-        className="h-mr30"
         data-testid="input_checkbox"
         required={true}
       />

@@ -21,60 +21,6 @@ label {
   }
 }
 
-.form__input_date,
-.form__input_select {
-  width: 291px;
-  padding: 5px 10px;
-
-  font-size: 16px;
-  color: #ffffff;
-
-  background-color: rgba(79, 127, 143, 0.5);
-  border: 1px solid #4f7f8f;
-  border-radius: 10px;
-}
-
-.form__input_date:focus,
-.form__input_date:focus-visible,
-.form__input_select:focus,
-.form__input_select:focus-visible {
-  outline: 4px auto #4f7f8f;
-}
-
-.form__input_file {
-  width: 291px;
-  max-width: 100%;
-  padding: 2px;
-
-  background: #f7f6f5;
-  border-radius: 10px;
-  border: 1px solid #4f7f8f;
-}
-
-.form__input_file::file-selector-button {
-  margin-right: 20px;
-  padding: 10px 20px;
-
-  color: #ffffff;
-
-  background: #4f7f8f;
-  border: none;
-  border-radius: 10px;
-
-  cursor: pointer;
-
-  transition: all 0.2s ease-in-out;
-}
-
-.form__input_file::file-selector-button:hover {
-  box-shadow: 0 0 10px #57a3bd;
-}
-
-.form__input_submit {
-  width: max-content;
-  margin: 0 auto;
-}
-
 .flex__container {
   display: flex;
   column-gap: 20px;
@@ -89,4 +35,11 @@ label {
 
 .isAgreed {
   width: max-content;
+}
+
+@media (max-width: 430px) {
+  .isAgreed {
+    flex-direction: row;
+    margin: 0 auto;
+  }
 }

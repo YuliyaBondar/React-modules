@@ -1,6 +1,8 @@
 import { Dispatch } from 'react';
 import { useForm } from 'react-hook-form';
 
+import './DateInput.css';
+
 type Props = {
   labelName: string;
   valueName: string;

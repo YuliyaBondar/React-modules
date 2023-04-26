@@ -1,5 +1,7 @@
 import { RefObject } from 'react';
 
+import './FileInput.css';
+
 type Props = {
   labelName: string;
   accept: string;
