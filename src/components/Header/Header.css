@@ -34,10 +34,14 @@
 
   border: 1px solid #4f7f8f;
   border-radius: 12px;
+
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-list_item a:hover {
   border-color: #57a3bd;
+
+  box-shadow: 0 0 10px #57a3bd;
 }
 
 .nav-list__link_active {

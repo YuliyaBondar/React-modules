@@ -1,6 +1,8 @@
 import { Dispatch } from 'react';
 import { useForm } from 'react-hook-form';
 
+import './Select.css';
+
 type Props = {
   labelName: string;
   valueSelect: string;
